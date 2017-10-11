@@ -114,6 +114,12 @@
     </entry>
     
     <entry>
+      <title><![CDATA[archives]]></title>
+      <url>/archives/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[标签]]></title>
       <url>/tags/index.html</url>
       <content type="html"><![CDATA[<p>###这里是标签</p>
