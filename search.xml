@@ -113,5 +113,12 @@
 ]]></content>
     </entry>
     
+    <entry>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
+      <content type="html"><![CDATA[<p>###这里是标签</p>
+]]></content>
+    </entry>
+    
   
 </search>
