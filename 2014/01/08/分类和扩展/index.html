@@ -422,7 +422,7 @@
 <li>类扩展听上去很复杂，但其实我们很早就认识他了。你记得继承自UIViewController的ViewController和继承自NSObject的类有什么不同么？</li>
 <li>继承自UIViewController的ViewController类</li>
 <li><p>对比看一下继承自NSObject的类我们会发现没有上面的代码块</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@interface ViewController()//这就是类扩展的写法</div><div class="line">@end</div></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@interface</span> ViewController()<span class="comment">//这就是类扩展的写法</span></div><div class="line"><span class="variable">@end</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>类扩展可以定义在.m文件中，这种扩展方式中定义的变量都是私有的，也可以定义在.h文件中，这样定义的代码就是共有的，类扩展在.m文件中声明私有方法是非常好的方式。</p>
 </li>
