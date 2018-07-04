@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2014/01/08/分类和扩展/index.html">
 <meta property="og:site_name" content="张君明&博客">
 <meta property="og:description" content="在最初学习category和extension的时候感觉很是头大，什么是分类，什么是类扩展，他们分别用在什么场合，各有哪些特点？后来随着自己的深入了解，发现这真的是很出色的两种扩展。希望把自己的经验写出来，让更多人能够理解分类和类扩展，并实际运用他们。">
-<meta property="og:updated_time" content="2018-07-04T10:44:16.400Z">
+<meta property="og:updated_time" content="2018-07-04T10:48:04.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探讨分类和类扩展">
 <meta name="twitter:description" content="在最初学习category和extension的时候感觉很是头大，什么是分类，什么是类扩展，他们分别用在什么场合，各有哪些特点？后来随着自己的深入了解，发现这真的是很出色的两种扩展。希望把自己的经验写出来，让更多人能够理解分类和类扩展，并实际运用他们。">
@@ -417,7 +417,7 @@
 <h5 id="第五-分类category和类扩展extension的关系"><a href="#第五-分类category和类扩展extension的关系" class="headerlink" title="第五: 分类category和类扩展extension的关系"></a>第五: 分类<code>category</code>和类扩展<code>extension</code>的关系</h5><ul>
 <li>类扩展<code>extension</code>是<code>category</code>的一个特例，有时候也被称为匿名分类。他的作用是为一个类添加一些私有的成员变量和方法。</li>
 <li>类扩展能写点啥？和分类不同，类扩展即可以声明成员变量又可以声明方法。</li>
-<li>类扩展听上去很复杂，但其实我们很早就认识他了。你记得继承自<code>UIViewController</code>的<code>ViewController</code>和继承自<code>NSObject</code>的类有什么不同么？<br>继承自<code>UIViewController</code>的<code>ViewController</code>类,对比看一下继承自<code>NSObject</code>的类我们会发现没有上面的代码块<br>  <code>@interface ViewController()</code><font color="#006600">&emsp;&emsp;//这就是类扩展的写法</font><br><br> <code>@end</code></li>
+<li>类扩展听上去很复杂，但其实我们很早就认识他了。你记得继承自<code>UIViewController</code>的<code>ViewController</code>和继承自<code>NSObject</code>的类有什么不同么？<br>继承自<code>UIViewController</code>的<code>ViewController</code>类,对比看一下继承自<code>NSObject</code>的类我们会发现没有上面的代码块<br>  <code>@interface ViewController()</code><font color="#006600">&emsp;&emsp;//这就是类扩展的写法</font><br> <code>@end</code></li>
 <li>类扩展可以定义在<code>.m</code>文件中，这种扩展方式中定义的变量都是私有的，也可以定义在<code>.h</code>文件中，这样定义的代码就是共有的，类扩展在<code>.m</code>文件中声明私有方法是非常好的方式。</li>
 <li>类扩展中添加的新方法，一定要实现,<code>category</code>中没有这种限制。</li>
 </ul>

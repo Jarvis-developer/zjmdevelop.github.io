@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2014/02/07/typedef 和 define 的微解释/index.html">
 <meta property="og:site_name" content="张君明&博客">
 <meta property="og:description" content="写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 define ,typedef的区别.">
-<meta property="og:updated_time" content="2018-07-04T10:13:29.874Z">
+<meta property="og:updated_time" content="2018-07-04T10:50:32.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 中 typedef 和 define 理解">
 <meta name="twitter:description" content="写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 define ,typedef的区别.">
@@ -395,13 +395,13 @@
 <li><p><code>typedef struct PersonObject
 {
   NSString *name;
-}person;</code> &emsp;&emsp; <font color="#006600"> // 给PersonObject结构体取别名为person。使用方法: <code>person p = {&quot;Jarvis&quot;};</code></font></p>
+}person;</code> &emsp;&emsp; <font color="#006600"> // 给PersonObject结构体取别名为person。使用方法: person p = {“Jarvis”};</font></p>
 </li>
 </ul>
 <h4 id="2-typedef-类型定义"><a href="#2-typedef-类型定义" class="headerlink" title="2. typedef 类型定义"></a>2. <code>typedef</code> 类型定义</h4><p>作用: 类型替换: 就是把复杂类型改一个简单的名字.<br>示例:</p>
 <ul>
-<li><code>#define kSayHello @&quot;Hello World !&quot;</code> &emsp;&emsp; <font color="#006600"> // <code>kSayHello</code>替换后面的文本</font></li>
-<li><code>#define kSayHelloTwo kSayHello</code> &emsp;&emsp; <font color="#006600"> // <code>kSayHelloTwo</code>替换<code>kSayHello</code></font></li>
+<li><code>#define kSayHello @&quot;Hello World !&quot;</code> &emsp;&emsp; <font color="#006600"> // kSayHello 替换后面的文本</font></li>
+<li><code>#define kSayHelloTwo kSayHello</code> &emsp;&emsp; <font color="#006600"> // kSayHelloTwo 替换 kSayHello</font></li>
 </ul>
 <h4 id="3-define和typedef的使用注意事项"><a href="#3-define和typedef的使用注意事项" class="headerlink" title="3. define和typedef的使用注意事项"></a>3. <code>define</code>和<code>typedef</code>的使用注意事项</h4><ul>
 <li><p><code>define</code> 是文本替换，是预编译指令，本身不参与编译，除非希望替换的文本中有<code>;</code>否则不用加<code>;</code></p>
@@ -411,7 +411,8 @@
 </li>
 <li>若使用<code>typedef char * MyString;</code>则 <code>MyString s1,s2</code> 等价于  <code>char *s1</code>; <code>char *s2</code></li>
 <li><p>若使用 <code>#define MyString char *</code> 则 <code>MyString s1,s2</code> 等价于<code>char *s1,s2</code> 即 <code>char *s1</code>; <code>char s2</code></p>
-<p>再次说明了<code>typedef</code>是类型替换，直接参与编译，而<code>define</code>只是简单的文本替换.</p>
+</li>
+<li><p>再次说明了<code>typedef</code>是类型替换，直接参与编译，而<code>define</code>只是简单的文本替换.</p>
 </li>
 </ul>
 
