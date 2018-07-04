@@ -59,15 +59,12 @@
 <p>解决方法:<br><br>使用分类（category）。</p>
 <h4 id="关于分类的一些重点"><a href="#关于分类的一些重点" class="headerlink" title="关于分类的一些重点"></a>关于分类的一些重点</h4><h5 id="第一-分类category的作用"><a href="#第一-分类category的作用" class="headerlink" title="第一: 分类category的作用"></a>第一: 分类<code>category</code>的作用</h5><ul>
 <li>作用：可以在不修改原来类的基础上，为一个类扩展方法。</li>
-<li>最主要的用法：给系统自带的类扩展方法。<br><br><br><br></li>
+<li>最主要的用法：给系统自带的类扩展方法。</li>
 </ul>
 <h5 id="第二-分类category中能写点啥-？"><a href="#第二-分类category中能写点啥-？" class="headerlink" title="第二: 分类category中能写点啥 ？"></a>第二: 分类<code>category</code>中能写点啥 ？</h5><ul>
-<li><p>分类中只能添加“方法”，不能增加成员变量。</p>
-</li>
-<li><p>分类中可以访问原来类中的成员变量，但是只能访问<code>@protect</code>和<code>@public</code>形式的变量。如果想要访问本类中的私有变量，分类和子类一样，只能通过方法来访问。</p>
-</li>
-<li><p>如果一定要在分类中添加成员变量，可以通过<code>getter</code>，<code>setter</code>手段进行添加，详细以后再写，</p>
-</li>
+<li>分类中只能添加“方法”，不能增加成员变量。</li>
+<li>分类中可以访问原来类中的成员变量，但是只能访问<code>@protect</code>和<code>@public</code>形式的变量。如果想要访问本类中的私有变量，分类和子类一样，只能通过方法来访问。</li>
+<li>如果一定要在分类中添加成员变量，可以通过<code>getter</code>，<code>setter</code>手段进行添加，详细以后再写，</li>
 </ul>
 <h5 id="第三-分类的书写方法"><a href="#第三-分类的书写方法" class="headerlink" title="第三: 分类的书写方法"></a>第三: 分类的书写方法</h5><p>  假设我们有一个类，名叫<code>Person</code>，意义是人类。在<code>person</code>类中我们有一个方法，<code>-(void)eat;</code>意义是吃，因为每个人类都会吃。<br>人类有非常多的共同属性,也有非常多的不同属性。有的人会说英语有的人就不会,所以我们给会说英语的人添加一个说英语的分类<code>speakEnglish</code>因为是<code>Person</code>类的分类，你会看到生成的名字叫做<code>Person+ speakEnglish</code>。下面让我们来试着添加一下。</p>
 <ul>
@@ -106,17 +103,17 @@
   
     
     <entry>
-      <title><![CDATA[分类]]></title>
-      <url>/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[简介]]></title>
       <url>/about/index.html</url>
       <content type="html"><![CDATA[<p>参加过多个产品的设计,交互,技术定型,开发,发布等完成的开发流程。具有快速学习的能力和沟通能力，能够快速融入团队,喜欢钻研新技术，更把新技术完美运用到项目中为乐趣,对工作和生活有很强的责任心,认真对待做的每一件事情</p>
 <h4 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h4><p> 邮箱: zjm100163@163.com</p>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[分类]]></title>
+      <url>/categories/index.html</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
