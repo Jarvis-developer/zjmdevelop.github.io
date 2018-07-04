@@ -3,35 +3,33 @@
   
     
     <entry>
-      <title><![CDATA[iOS 中 typedef 和 define 理解]]></title>
+      <title><![CDATA[iOS中 typedef 和 define 理解]]></title>
       <url>/2014/02/07/typedef%20%E5%92%8C%20define%20%E7%9A%84%E5%BE%AE%E8%A7%A3%E9%87%8A/</url>
       <content type="html"><![CDATA[<p>写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 <code>define</code> ,<code>typedef</code>的区别.</p>
 <a id="more"></a>
 <h4 id="1-define-宏定义"><a href="#1-define-宏定义" class="headerlink" title="1. define 宏定义"></a>1. <code>define</code> 宏定义</h4><p>作用: 文本替换: 把出现的文本替换为定义的文本.</p>
 <p>示例:</p>
 <ul>
-<li><p><code>typedef float floatX;</code>   &emsp;&emsp; <font color="#006600"> // 给float取别名为floatX</font></p>
-</li>
-<li><p><code>typedef void(^passBlock) (int a,int b);</code>  &emsp;&emsp;<font color="#006600"> // 给block取别名passBlock</font></p>
-</li>
-<li><p><code>typedef struct PersonObject
+<li><code>typedef float floatX;</code>   &emsp;&emsp; <font color="#006600"> // 给float取别名为floatX</font></li>
+<li><code>typedef void(^passBlock) (int a,int b);</code>  &emsp;&emsp;<font color="#006600"> // 给block取别名passBlock</font></li>
+<li><code>typedef struct PersonObject
 {
   NSString *name;
-}person;</code> &emsp;&emsp; <font color="#006600"> // 给PersonObject结构体取别名为person。使用方法: person p = {“Jarvis”};</font></p>
-</li>
+}person;</code> &emsp;&emsp; <font color="#006600"> // 给PersonObject结构体取别名为person。使用方法: person p = {“Jarvis”};</font></li>
 </ul>
-<h4 id="2-typedef-类型定义"><a href="#2-typedef-类型定义" class="headerlink" title="2. typedef 类型定义"></a>2. <code>typedef</code> 类型定义</h4><p>作用: 类型替换: 就是把复杂类型改一个简单的名字.<br>示例:</p>
+<h4 id="2-typedef-类型定义"><a href="#2-typedef-类型定义" class="headerlink" title="2. typedef 类型定义"></a>2. <code>typedef</code> 类型定义</h4><p>作用: 类型替换: 就是把复杂类型改一个简单的名字.</p>
+<p>示例:</p>
 <ul>
 <li><code>#define kSayHello @&quot;Hello World !&quot;</code> &emsp;&emsp; <font color="#006600"> // kSayHello 替换后面的文本</font></li>
 <li><code>#define kSayHelloTwo kSayHello</code> &emsp;&emsp; <font color="#006600"> // kSayHelloTwo 替换 kSayHello</font></li>
 </ul>
 <h4 id="3-define和typedef的使用注意事项"><a href="#3-define和typedef的使用注意事项" class="headerlink" title="3. define和typedef的使用注意事项"></a>3. <code>define</code>和<code>typedef</code>的使用注意事项</h4><ul>
-<li><p><code>define</code> 是文本替换，是预编译指令，本身不参与编译，除非希望替换的文本中有<code>;</code>否则不用加<code>;</code></p>
-<p><code>typedef</code> 是类型替换，语句的一种，结尾必须有<code>;</code></p>
+<li><p><code>define</code> 是文本替换，是预编译指令，本身不参与编译，除非希望替换的文本中有<code>;</code>否则不用加<code>;</code><br><code>typedef</code> 是类型替换，语句的一种，结尾必须有<code>;</code></p>
 </li>
 <li><p><code>define</code> 在方法/函数中则作用域从写的地方开始有效，直至使用<code>#undef</code>（不写此指令则后面一直有效）。<code>typedef</code> 写在方法/函数中则作用域 只在此方法/函数中有效。</p>
 </li>
-<li>若使用<code>typedef char * MyString;</code>则 <code>MyString s1,s2</code> 等价于  <code>char *s1</code>; <code>char *s2</code></li>
+<li><p>若使用<code>typedef char * MyString;</code>则 <code>MyString s1,s2</code> 等价于  <code>char *s1</code>; <code>char *s2</code></p>
+</li>
 <li><p>若使用 <code>#define MyString char *</code> 则 <code>MyString s1,s2</code> 等价于<code>char *s1,s2</code> 即 <code>char *s1</code>; <code>char s2</code></p>
 </li>
 <li><p>再次说明了<code>typedef</code>是类型替换，直接参与编译，而<code>define</code>只是简单的文本替换.</p>
@@ -42,7 +40,9 @@
         
         <tags>
             
-            <tag> iOS开发 Objective-C </tag>
+            <tag> iOS开发 </tag>
+            
+            <tag> Objective-C </tag>
             
         </tags>
         
@@ -85,7 +85,7 @@
 <h5 id="第五-分类category和类扩展extension的关系"><a href="#第五-分类category和类扩展extension的关系" class="headerlink" title="第五: 分类category和类扩展extension的关系"></a>第五: 分类<code>category</code>和类扩展<code>extension</code>的关系</h5><ul>
 <li>类扩展<code>extension</code>是<code>category</code>的一个特例，有时候也被称为匿名分类。他的作用是为一个类添加一些私有的成员变量和方法。</li>
 <li>类扩展能写点啥？和分类不同，类扩展即可以声明成员变量又可以声明方法。</li>
-<li>类扩展听上去很复杂，但其实我们很早就认识他了。你记得继承自<code>UIViewController</code>的<code>ViewController</code>和继承自<code>NSObject</code>的类有什么不同么？<br>继承自<code>UIViewController</code>的<code>ViewController</code>类,对比看一下继承自<code>NSObject</code>的类我们会发现没有上面的代码块<br>  <code>@interface ViewController()</code><font color="#006600">&emsp;&emsp;//这就是类扩展的写法</font><br> <code>@end</code></li>
+<li>类扩展听上去很复杂，但其实我们很早就认识他了。你记得继承自<code>UIViewController</code>的<code>ViewController</code>和继承自<code>NSObject</code>的类有什么不同么？<br>继承自<code>UIViewController</code>的<code>ViewController</code>类,对比看一下继承自<code>NSObject</code>的类我们会发现没有下面的代码块<br>  <code>@interface ViewController()</code><font color="#006600">&emsp;&emsp;//这就是类扩展的写法</font><br> <code>@end</code></li>
 <li>类扩展可以定义在<code>.m</code>文件中，这种扩展方式中定义的变量都是私有的，也可以定义在<code>.h</code>文件中，这样定义的代码就是共有的，类扩展在<code>.m</code>文件中声明私有方法是非常好的方式。</li>
 <li>类扩展中添加的新方法，一定要实现,<code>category</code>中没有这种限制。</li>
 </ul>
@@ -120,8 +120,7 @@
     <entry>
       <title><![CDATA[标签]]></title>
       <url>/tags/index.html</url>
-      <content type="html"><![CDATA[<p>这里是标签</p>
-]]></content>
+      <content type="html"></content>
     </entry>
     
   
