@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2014/01/08/分类和扩展/index.html">
 <meta property="og:site_name" content="张君明&博客">
 <meta property="og:description" content="在最初学习category和extension的时候感觉很是头大，什么是分类，什么是类扩展，他们分别用在什么场合，各有哪些特点？后来随着自己的深入了解，发现这真的是很出色的两种扩展。希望把自己的经验写出来，让更多人能够理解分类和类扩展，并实际运用他们。">
-<meta property="og:updated_time" content="2018-07-04T09:24:48.384Z">
+<meta property="og:updated_time" content="2018-07-04T10:10:02.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探讨分类和类扩展">
 <meta name="twitter:description" content="在最初学习category和extension的时候感觉很是头大，什么是分类，什么是类扩展，他们分别用在什么场合，各有哪些特点？后来随着自己的深入了解，发现这真的是很出色的两种扩展。希望把自己的经验写出来，让更多人能够理解分类和类扩展，并实际运用他们。">
@@ -386,19 +386,15 @@
         <p>  在最初学习<code>category</code>和<code>extension</code>的时候感觉很是头大，什么是分类，什么是类扩展，他们分别用在什么场合，各有哪些特点？后来随着自己的深入了解，发现这真的是很出色的两种扩展。希望把自己的经验写出来，让更多人能够理解分类和类扩展，并实际运用他们。</p>
 <a id="more"></a>
 <p>分类运用场景举例：想要收集每个页面的启动时间。</p>
-<p>###问题1：</p>
-<p>问题:<br><br>项目中已经有上百个页面了，如果一个一个的加，浪费时间不说，以后增加了新页面，还需要添加方法。</p>
+<h4 id="问题1："><a href="#问题1：" class="headerlink" title="问题1："></a>问题1：</h4><p>问题:<br><br>项目中已经有上百个页面了，如果一个一个的加，浪费时间不说，以后增加了新页面，还需要添加方法。</p>
 <p>解决方法：<br><br>我们可以发现页面都继承了<code>UIViewController</code>，想要在每个页面都执行的代码，可以写在这些页面的父类中。我们可以把代码写在<code>UIViewController</code>中。</p>
-<p>###问题2：<br>问题:<br><br><code>UIViewController</code>是官方类，我们只能调用期接口，并不能修改他的实现。</p>
+<h4 id="问题2："><a href="#问题2：" class="headerlink" title="问题2："></a>问题2：</h4><p>问题:<br><br><code>UIViewController</code>是官方类，我们只能调用期接口，并不能修改他的实现。</p>
 <p>解决方法:<br><br>使用分类（category）。</p>
-<p>###关于分类的一些重点</p>
-<p>####第一: 分类<code>category</code>的作用</p>
-<ul>
+<h4 id="关于分类的一些重点"><a href="#关于分类的一些重点" class="headerlink" title="关于分类的一些重点"></a>关于分类的一些重点</h4><h5 id="第一-分类category的作用"><a href="#第一-分类category的作用" class="headerlink" title="第一: 分类category的作用"></a>第一: 分类<code>category</code>的作用</h5><ul>
 <li>作用：可以在不修改原来类的基础上，为一个类扩展方法。</li>
 <li>最主要的用法：给系统自带的类扩展方法。<br><br><br><br></li>
 </ul>
-<p>####第二: 分类<code>category</code>中能写点啥 ？</p>
-<ul>
+<h5 id="第二-分类category中能写点啥-？"><a href="#第二-分类category中能写点啥-？" class="headerlink" title="第二: 分类category中能写点啥 ？"></a>第二: 分类<code>category</code>中能写点啥 ？</h5><ul>
 <li><p>分类中只能添加“方法”，不能增加成员变量。</p>
 </li>
 <li><p>分类中可以访问原来类中的成员变量，但是只能访问<code>@protect</code>和<code>@public</code>形式的变量。如果想要访问本类中的私有变量，分类和子类一样，只能通过方法来访问。</p>
@@ -406,8 +402,7 @@
 <li><p>如果一定要在分类中添加成员变量，可以通过<code>getter</code>，<code>setter</code>手段进行添加，详细以后再写，</p>
 </li>
 </ul>
-<p>####第三: 分类的书写方法</p>
-<p>  假设我们有一个类，名叫<code>Person</code>，意义是人类。在<code>person</code>类中我们有一个方法，<code>-(void)eat;</code>意义是吃，因为每个人类都会吃。<br>人类有非常多的共同属性,也有非常多的不同属性。有的人会说英语有的人就不会,所以我们给会说英语的人添加一个说英语的分类<code>speakEnglish</code>因为是<code>Person</code>类的分类，你会看到生成的名字叫做<code>Person+ speakEnglish</code>。下面让我们来试着添加一下。</p>
+<h5 id="第三-分类的书写方法"><a href="#第三-分类的书写方法" class="headerlink" title="第三: 分类的书写方法"></a>第三: 分类的书写方法</h5><p>  假设我们有一个类，名叫<code>Person</code>，意义是人类。在<code>person</code>类中我们有一个方法，<code>-(void)eat;</code>意义是吃，因为每个人类都会吃。<br>人类有非常多的共同属性,也有非常多的不同属性。有的人会说英语有的人就不会,所以我们给会说英语的人添加一个说英语的分类<code>speakEnglish</code>因为是<code>Person</code>类的分类，你会看到生成的名字叫做<code>Person+ speakEnglish</code>。下面让我们来试着添加一下。</p>
 <ul>
 <li>分类的使用过程：声明分类-&gt;实现分类-&gt;使用分类</li>
 <li>在项目中添加类，选择Objective-C File，填写分类的类名 -&gt; 选择文件类型是分类 -&gt; 选择类</li>
@@ -418,7 +413,7 @@
 
 回答：
 我们可以进行方法交换（这样可以不必在调用的地方增加头文件），从而使得在实现的时候调用重写的方法。具体实现以后会写，TODO-->
-<p>####第四: 分类的执行优先级</p>
+<p>#####第四: 分类的执行优先级</p>
 <ul>
 <li>在本类和分类有相同的方法时，优先调用分类的方法再调用本类的方法。</li>
 <li>如果有两个分类，他们都实现了相同的方法，如何判断谁先执行？分类执行顺序可以通过<code>targets,Build Phases,Complie Source</code>进行调节，注意执行顺序是从上到下的。（只有两个相同方法名的分类）</li>
@@ -534,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -595,6 +599,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题1："><span class="nav-number">1.</span> <span class="nav-text">问题1：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题2："><span class="nav-number">2.</span> <span class="nav-text">问题2：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于分类的一些重点"><span class="nav-number">3.</span> <span class="nav-text">关于分类的一些重点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#第一-分类category的作用"><span class="nav-number">3.1.</span> <span class="nav-text">第一: 分类category的作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第二-分类category中能写点啥-？"><span class="nav-number">3.2.</span> <span class="nav-text">第二: 分类category中能写点啥 ？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第三-分类的书写方法"><span class="nav-number">3.3.</span> <span class="nav-text">第三: 分类的书写方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

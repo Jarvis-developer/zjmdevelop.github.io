@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2014/02/07/typedef 和 define 的微解释/index.html">
 <meta property="og:site_name" content="张君明&博客">
 <meta property="og:description" content="写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 define ,typedef的区别.">
-<meta property="og:updated_time" content="2018-07-04T09:04:08.820Z">
+<meta property="og:updated_time" content="2018-07-04T10:10:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 中 typedef 和 define 理解">
 <meta name="twitter:description" content="写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 define ,typedef的区别.">
@@ -385,7 +385,7 @@
       
         <p>写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 <code>define</code> ,<code>typedef</code>的区别.</p>
 <a id="more"></a>
-<h3 id="1-define-宏定义"><a href="#1-define-宏定义" class="headerlink" title="1. define 宏定义"></a>1. <code>define</code> 宏定义</h3><p>作用: 文本替换: 把出现的文本替换为定义的文本.</p>
+<h4 id="1-define-宏定义"><a href="#1-define-宏定义" class="headerlink" title="1. define 宏定义"></a>1. <code>define</code> 宏定义</h4><p>作用: 文本替换: 把出现的文本替换为定义的文本.</p>
 <p>示例:</p>
 <ul>
 <li><p><code>typedef float floatX;</code>   &emsp;&emsp; <font color="#006600"> // 给float取别名为floatX</font></p>
@@ -398,13 +398,13 @@
 }person;</code> &emsp;&emsp; <font color="#006600"> // 给PersonObject结构体取别名为person。使用方法: <code>person p = {&quot;Jarvis&quot;};</code></font></p>
 </li>
 </ul>
-<h3 id="2-typedef-类型定义"><a href="#2-typedef-类型定义" class="headerlink" title="2. typedef 类型定义"></a>2. <code>typedef</code> 类型定义</h3><p>作用: 类型替换: 就是把复杂类型改一个简单的名字.</p>
+<h4 id="2-typedef-类型定义"><a href="#2-typedef-类型定义" class="headerlink" title="2. typedef 类型定义"></a>2. <code>typedef</code> 类型定义</h4><p>作用: 类型替换: 就是把复杂类型改一个简单的名字.</p>
 <p>示例:</p>
 <ul>
 <li><code>#define kSayHello @&quot;Hello World !&quot;</code> &emsp;&emsp; <font color="#006600"> // <code>kSayHello</code>替换后面的文本</font></li>
 <li><code>#define kSayHelloTwo kSayHello</code> &emsp;&emsp; <font color="#006600"> // <code>kSayHelloTwo</code>替换<code>kSayHello</code></font></li>
 </ul>
-<h3 id="3-define和typedef的使用注意事项"><a href="#3-define和typedef的使用注意事项" class="headerlink" title="3. define和typedef的使用注意事项"></a>3. <code>define</code>和<code>typedef</code>的使用注意事项</h3><ul>
+<h4 id="3-define和typedef的使用注意事项"><a href="#3-define和typedef的使用注意事项" class="headerlink" title="3. define和typedef的使用注意事项"></a>3. <code>define</code>和<code>typedef</code>的使用注意事项</h4><ul>
 <li><p><code>define</code> 是文本替换，是预编译指令，本身不参与编译，除非希望替换的文本中有<code>;</code>否则不用加<code>;</code></p>
 <p><code>typedef</code> 是类型替换，语句的一种，结尾必须有<code>;</code></p>
 </li>
@@ -592,7 +592,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-define-宏定义"><span class="nav-number">1.</span> <span class="nav-text">1. define 宏定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-typedef-类型定义"><span class="nav-number">2.</span> <span class="nav-text">2. typedef 类型定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-define和typedef的使用注意事项"><span class="nav-number">3.</span> <span class="nav-text">3. define和typedef的使用注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-define-宏定义"><span class="nav-number">1.</span> <span class="nav-text">1. define 宏定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-typedef-类型定义"><span class="nav-number">2.</span> <span class="nav-text">2. typedef 类型定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-define和typedef的使用注意事项"><span class="nav-number">3.</span> <span class="nav-text">3. define和typedef的使用注意事项</span></a></li></ol></div>
             
 
           </div>
