@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2014/01/08/分类和扩展/index.html">
 <meta property="og:site_name" content="张君明&博客">
 <meta property="og:description" content="在最初学习category和extension的时候感觉很是头大，什么是分类，什么是类扩展，他们分别用在什么场合，各有哪些特点？后来随着自己的深入了解，发现这真的是很出色的两种扩展。希望把自己的经验写出来，让更多人能够理解分类和类扩展，并实际运用他们。">
-<meta property="og:updated_time" content="2018-07-04T10:42:57.736Z">
+<meta property="og:updated_time" content="2018-07-04T10:44:16.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探讨分类和类扩展">
 <meta name="twitter:description" content="在最初学习category和extension的时候感觉很是头大，什么是分类，什么是类扩展，他们分别用在什么场合，各有哪些特点？后来随着自己的深入了解，发现这真的是很出色的两种扩展。希望把自己的经验写出来，让更多人能够理解分类和类扩展，并实际运用他们。">
@@ -386,10 +386,10 @@
         <p>  在最初学习<code>category</code>和<code>extension</code>的时候感觉很是头大，什么是分类，什么是类扩展，他们分别用在什么场合，各有哪些特点？后来随着自己的深入了解，发现这真的是很出色的两种扩展。希望把自己的经验写出来，让更多人能够理解分类和类扩展，并实际运用他们。</p>
 <a id="more"></a>
 <p>分类运用场景举例：想要收集每个页面的启动时间。</p>
-<h4 id="问题1："><a href="#问题1：" class="headerlink" title="问题1："></a>问题1：</h4><p>问题:<br><br>项目中已经有上百个页面了，如果一个一个的加，浪费时间不说，以后增加了新页面，还需要添加方法。</p>
-<p>解决方法：<br><br>我们可以发现页面都继承了<code>UIViewController</code>，想要在每个页面都执行的代码，可以写在这些页面的父类中。我们可以把代码写在<code>UIViewController</code>中。</p>
-<h4 id="问题2："><a href="#问题2：" class="headerlink" title="问题2："></a>问题2：</h4><p>问题:<br><br><code>UIViewController</code>是官方类，我们只能调用期接口，并不能修改他的实现。</p>
-<p>解决方法:<br><br>使用分类（category）。</p>
+<h4 id="问题1："><a href="#问题1：" class="headerlink" title="问题1："></a>问题1：</h4><p>问题:<br>项目中已经有上百个页面了，如果一个一个的加，浪费时间不说，以后增加了新页面，还需要添加方法。</p>
+<p>解决方法:<br>我们可以发现页面都继承了<code>UIViewController</code>，想要在每个页面都执行的代码，可以写在这些页面的父类中。我们可以把代码写在<code>UIViewController</code>中。</p>
+<h4 id="问题2："><a href="#问题2：" class="headerlink" title="问题2："></a>问题2：</h4><p>问题:<br><code>UIViewController</code>是官方类，我们只能调用期接口，并不能修改他的实现。</p>
+<p>解决方法:<br>使用分类（category）。</p>
 <h4 id="关于分类的一些重点"><a href="#关于分类的一些重点" class="headerlink" title="关于分类的一些重点"></a>关于分类的一些重点</h4><h5 id="第一-分类category的作用"><a href="#第一-分类category的作用" class="headerlink" title="第一: 分类category的作用"></a>第一: 分类<code>category</code>的作用</h5><ul>
 <li>作用：可以在不修改原来类的基础上，为一个类扩展方法。</li>
 <li>最主要的用法：给系统自带的类扩展方法。</li>
