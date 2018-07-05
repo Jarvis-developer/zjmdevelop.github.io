@@ -88,6 +88,7 @@
 <meta property="og:url" content="http://yoursite.com/2014/02/07/typedef 和 define 的微解释/index.html">
 <meta property="og:site_name" content="张君明@博客">
 <meta property="og:description" content="写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 define ,typedef的区别.">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-07-04T11:42:50.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中 typedef 和 define 理解">
@@ -101,7 +102,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -182,22 +183,12 @@
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
+            归档
           </a>
         </li>
       
@@ -212,12 +203,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            归档
+            标签
           </a>
         </li>
       
@@ -228,6 +219,16 @@
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
           </a>
         </li>
       
@@ -449,15 +450,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2014/01/08/分类和扩展/" rel="next" title="探讨分类和类扩展">
+                <i class="fa fa-chevron-left"></i> 探讨分类和类扩展
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2014/01/08/分类和扩展/" rel="prev" title="探讨分类和类扩展">
-                探讨分类和类扩展 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -616,7 +617,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
