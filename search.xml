@@ -6,7 +6,7 @@
       <title>面向对象的六大原则</title>
       <link href="/2014/03/09/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/"/>
       <url>/2014/03/09/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/</url>
-      <content type="html"><![CDATA[<p>思想是编程的灵魂,面向对象的编程思想,各种设计模式掌握的好才能写出稳健,易用,扩展性好,测试性好的代码.<br><a id="more"></a></p><p>###1.单一职责原则 (SRP)</p><blockquote><p><strong>定义:</strong>      对于一个类来说,引起它变化的原因应该只有一个</p><p><strong>解释:</strong>  一个类是一组相关性很高的函数,一个类尽量只实现一个功能</p></blockquote><p>###2.开闭原则 (OCP)</p><blockquote><p><strong>定义:</strong>  程序中的对象应该是扩展开放,对修改封闭.这个原则同样也适合于控件的封装.</p><p><strong>解释:</strong>  当一个类实现了一个功能,想要增加新的功能或者改变这个功能的时候不是去修改这个类而是通过扩展来实现.实现该类的接口方法来实现扩展,或者使用集成或分类来实现.</p></blockquote><p>###3.里氏替换原则 (LSP)</p><blockquote><p><strong>定义:</strong>  使用基类的地方必须能使用其子类对象</p><p><strong>解释:</strong>  只要父类能出现的地方子类就可以使用,替换为子类也不会产生错误.开闭原则可以通过里氏替换原则来实现.</p></blockquote><p>####4.依赖倒置原则 (DIP)</p><blockquote><p><strong>定义:</strong>  模块间依赖抽象化</p><p><strong>解释:</strong>  模块间通过抽象依赖,实体类之间不直接发生依赖关系,其依赖关系是通过接口或者抽象类产生.</p></blockquote><p>####5.接口隔离原则 (ISP)</p><blockquote><p><strong>定义:</strong>  类或者模块不应该依赖它不需要的接口</p><p><strong>解释:</strong>  接口隔离可以使系统解耦合,更容易更改或者重构,对其他模块造成的影响最小.</p></blockquote><p>####6.迪米特原则 (LOD)</p><blockquote><p><strong>定义:</strong>  一个对象对其他对象了解的越少越好</p><p><strong>解释:</strong>  一个类应该对引用的类知道的越少越好,类的内部实现与调用者没有关系</p></blockquote>]]></content>
+      <content type="html"><![CDATA[<p>思想是编程的灵魂,面向对象的编程思想,各种设计模式掌握的好才能写出稳健,易用,扩展性好,测试性好的代码.<br><a id="more"></a></p><h3 id="1-单一职责原则-SRP"><a href="#1-单一职责原则-SRP" class="headerlink" title="1.单一职责原则 (SRP)"></a>1.单一职责原则 (SRP)</h3><blockquote><p><strong>定义:</strong>      对于一个类来说,引起它变化的原因应该只有一个</p><p><strong>解释:</strong>  一个类是一组相关性很高的函数,一个类尽量只实现一个功能</p></blockquote><h3 id="2-开闭原则-OCP"><a href="#2-开闭原则-OCP" class="headerlink" title="2.开闭原则 (OCP)"></a>2.开闭原则 (OCP)</h3><blockquote><p><strong>定义:</strong>  程序中的对象应该是扩展开放,对修改封闭.这个原则同样也适合于控件的封装.</p><p><strong>解释:</strong>  当一个类实现了一个功能,想要增加新的功能或者改变这个功能的时候不是去修改这个类而是通过扩展来实现.实现该类的接口方法来实现扩展,或者使用集成或分类来实现.</p></blockquote><h3 id="3-里氏替换原则-LSP"><a href="#3-里氏替换原则-LSP" class="headerlink" title="3.里氏替换原则 (LSP)"></a>3.里氏替换原则 (LSP)</h3><blockquote><p><strong>定义:</strong>  使用基类的地方必须能使用其子类对象</p><p><strong>解释:</strong>  只要父类能出现的地方子类就可以使用,替换为子类也不会产生错误.开闭原则可以通过里氏替换原则来实现.</p></blockquote><h4 id="4-依赖倒置原则-DIP"><a href="#4-依赖倒置原则-DIP" class="headerlink" title="4.依赖倒置原则 (DIP)"></a>4.依赖倒置原则 (DIP)</h4><blockquote><p><strong>定义:</strong>  模块间依赖抽象化</p><p><strong>解释:</strong>  模块间通过抽象依赖,实体类之间不直接发生依赖关系,其依赖关系是通过接口或者抽象类产生.</p></blockquote><h4 id="5-接口隔离原则-ISP"><a href="#5-接口隔离原则-ISP" class="headerlink" title="5.接口隔离原则 (ISP)"></a>5.接口隔离原则 (ISP)</h4><blockquote><p><strong>定义:</strong>  类或者模块不应该依赖它不需要的接口</p><p><strong>解释:</strong>  接口隔离可以使系统解耦合,更容易更改或者重构,对其他模块造成的影响最小.</p></blockquote><h4 id="6-迪米特原则-LOD"><a href="#6-迪米特原则-LOD" class="headerlink" title="6.迪米特原则 (LOD)"></a>6.迪米特原则 (LOD)</h4><blockquote><p><strong>定义:</strong>  一个对象对其他对象了解的越少越好</p><p><strong>解释:</strong>  一个类应该对引用的类知道的越少越好,类的内部实现与调用者没有关系</p></blockquote>]]></content>
       
       <categories>
           
@@ -98,17 +98,17 @@
   
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
       <title>简介</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
       <content type="html"><![CDATA[<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>参加过多个产品的设计,交互,技术定型,开发,发布等完成的开发流程.具有快速学习的能力和沟通能力，能够快速融入团队,喜欢钻研新技术，更把新技术完美运用到项目中为乐趣,对工作和生活有很强的责任心,认真对待做的每一件事情.</p><h4 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h4><p> 邮箱: zjm100163@163.com</p>]]></content>
+    </entry>
+    
+    <entry>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
