@@ -37,6 +37,8 @@
           
           <category> iOS开发 </category>
           
+          <category> 编程思想 </category>
+          
       </categories>
       
       
@@ -59,6 +61,8 @@
       <categories>
           
           <category> iOS开发 </category>
+          
+          <category> 技术提升 </category>
           
       </categories>
       
@@ -83,6 +87,8 @@
           
           <category> iOS开发 </category>
           
+          <category> 技术细节 </category>
+          
       </categories>
       
       
@@ -90,7 +96,7 @@
             
             <tag> iOS开发 </tag>
             
-            <tag> Objective-C </tag>
+            <tag> 技术细节 </tag>
             
         </tags>
       
@@ -115,7 +121,7 @@
             
             <tag> iOS开发 </tag>
             
-            <tag> Objective-C </tag>
+            <tag> 技术细节 </tag>
             
         </tags>
       
