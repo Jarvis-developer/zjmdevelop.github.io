@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS开发,技术细节," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="容易走的路大多到达不了目的地!!!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="张君明@博客">
-<meta property="og:url" content="http://yoursite.com/tags/iOS开发/index.html">
+<meta name="description" content="写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 define ,typedef的区别.">
+<meta name="keywords" content="iOS开发,技术细节">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS中 typedef 和 define 理解">
+<meta property="og:url" content="http://yoursite.com/2017/06/07/typedef 和 define 的微解释/index.html">
 <meta property="og:site_name" content="张君明@博客">
-<meta property="og:description" content="容易走的路大多到达不了目的地!!!">
+<meta property="og:description" content="写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 define ,typedef的区别.">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-09T08:51:40.070Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张君明@博客">
-<meta name="twitter:description" content="容易走的路大多到达不了目的地!!!">
+<meta name="twitter:title" content="iOS中 typedef 和 define 理解">
+<meta name="twitter:description" content="写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 define ,typedef的区别.">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/iOS开发/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/07/typedef 和 define 的微解释/"/>
 
 
 
 
 
-  <title>标签: iOS开发 | 张君明@博客</title>
+  <title>iOS中 typedef 和 define 理解 | 张君明@博客</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,166 +283,253 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>iOS开发<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/07/typedef 和 define 的微解释/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jarvis">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张君明@博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/04/22/几种常见排序方法/" itemprop="url">
-              
-                <span itemprop="name">几种常见的排序方法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">iOS中 typedef 和 define 理解</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-22T15:10:37+08:00"
-              content="2018-04-22" >
-          04-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-07T12:20:17+08:00">
+                2017-06-07
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/技术细节/" itemprop="url" rel="index">
+                    <span itemprop="name">技术细节</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/12/分类和扩展/" itemprop="url">
-              
-                <span itemprop="name">探讨分类和类扩展</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-12T11:59:42+08:00"
-              content="2017-08-12" >
-          08-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/07/typedef 和 define 的微解释/" itemprop="url">
-              
-                <span itemprop="name">iOS中 typedef 和 define 理解</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-07T12:20:17+08:00"
-              content="2017-06-07" >
-          06-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/09/面向对象的六大原则/" itemprop="url">
-              
-                <span itemprop="name">面向对象的六大原则</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-09T12:10:37+08:00"
-              content="2017-03-09" >
-          03-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/02/08/iOS开发牛人博客/" itemprop="url">
-              
-                <span itemprop="name">iOS开发牛人博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-02-08T10:10:37+08:00"
-              content="2016-02-08" >
-          02-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 <code>define</code> ,<code>typedef</code>的区别.</p>
+<a id="more"></a>
+<h4 id="1-define-宏定义"><a href="#1-define-宏定义" class="headerlink" title="1. define 宏定义"></a>1. <code>define</code> 宏定义</h4><p>作用: 文本替换: 把出现的文本替换为定义的文本.</p>
+<p>示例:</p>
+<p><font color="#006600"> // 给float取别名为floatX</font><br><code>typedef float floatX;</code> </p>
+<p><font color="#006600"> // 给block取别名passBlock</font><br><code>typedef void(^passBlock) (int a,int b);</code></p>
+<p><font color="#006600"> // 给PersonObject结构体取别名为person。使用方法: person p = {“Jarvis”};</font><br><code>typedef struct PersonObject
+{
+    NSString *name;
+}person;</code></p>
+<h4 id="2-typedef-类型定义"><a href="#2-typedef-类型定义" class="headerlink" title="2. typedef 类型定义"></a>2. <code>typedef</code> 类型定义</h4><p>作用: 类型替换: 就是把复杂类型改一个简单的名字.</p>
+<p>示例:</p>
+<p><font color="#006600"> // kSayHello 替换后面的文本</font><br><code>#define kSayHello @&quot;Hello World !&quot;</code></p>
+<p><font color="#006600"> // kSayHelloTwo 替换 kSayHello</font><br><code>#define kSayHelloTwo kSayHello</code></p>
+<h4 id="3-define和typedef的使用注意事项"><a href="#3-define和typedef的使用注意事项" class="headerlink" title="3. define和typedef的使用注意事项"></a>3. <code>define</code>和<code>typedef</code>的使用注意事项</h4><ul>
+<li><p><code>define</code> 是文本替换，是预编译指令，本身不参与编译，除非希望替换的文本中有<code>;</code>否则不用加<code>;</code><br><code>typedef</code> 是类型替换，语句的一种，结尾必须有<code>;</code></p>
+</li>
+<li><p><code>define</code> 在方法/函数中则作用域从写的地方开始有效，直至使用<code>#undef</code>（不写此指令则后面一直有效）。<code>typedef</code> 写在方法/函数中则作用域 只在此方法/函数中有效。</p>
+</li>
+<li><p>若使用<code>typedef char * MyString;</code>则 <code>MyString s1,s2</code> 等价于  <code>char *s1</code>; <code>char *s2</code></p>
+</li>
+<li><p>若使用 <code>#define MyString char *</code> 则 <code>MyString s1,s2</code> 等价于<code>char *s1,s2</code> 即 <code>char *s1</code>; <code>char s2</code></p>
+</li>
+<li><p>再次说明了<code>typedef</code>是类型替换，直接参与编译，而<code>define</code>只是简单的文本替换.</p>
+</li>
+</ul>
 
       
     </div>
 
+
+
+<div>
+      
+          <div>  <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-smile-o"></i>感谢您的阅读-------------</div>  </div>
+
+
+      
+</div>
+
+
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Jarvis 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Jarvis 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS开发/" rel="tag"> iOS开发</a>
+          
+            <a href="/tags/技术细节/" rel="tag"> 技术细节</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/09/面向对象的六大原则/" rel="next" title="面向对象的六大原则">
+                <i class="fa fa-chevron-left"></i> 面向对象的六大原则
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/12/分类和扩展/" rel="prev" title="探讨分类和类扩展">
+                探讨分类和类扩展 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -448,6 +537,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzg1MS8xNDM4MQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -468,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -549,6 +656,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-define-宏定义"><span class="nav-number">1.</span> <span class="nav-text">1. define 宏定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-typedef-类型定义"><span class="nav-number">2.</span> <span class="nav-text">2. typedef 类型定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-define和typedef的使用注意事项"><span class="nav-number">3.</span> <span class="nav-text">3. define和typedef的使用注意事项</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -713,6 +836,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -741,6 +868,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
