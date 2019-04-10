@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="张君明@博客">
 <meta property="og:description" content="写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 define ,typedef的区别.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-09T08:51:40.070Z">
+<meta property="og:updated_time" content="2019-04-10T02:32:05.229Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中 typedef 和 define 理解">
 <meta name="twitter:description" content="写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 define ,typedef的区别.">
@@ -399,7 +399,7 @@
       
         <p>写在前面,学习iOS开发的过程中会遇到一些很细节的问题,但是这些问题对于开发和学习又很重要所以就把这些东西记录下来方便回顾和分享给大家,本章主要讨论 <code>define</code> ,<code>typedef</code>的区别.</p>
 <a id="more"></a>
-<h4 id="1-define-宏定义"><a href="#1-define-宏定义" class="headerlink" title="1. define 宏定义"></a>1. <code>define</code> 宏定义</h4><p>作用: 文本替换: 把出现的文本替换为定义的文本.</p>
+<h4 id="1-typedef-类型定义"><a href="#1-typedef-类型定义" class="headerlink" title="1. typedef 类型定义"></a>1. <code>typedef</code> 类型定义</h4><p>作用: 类型替换: 就是把复杂类型改一个简单的名字.</p>
 <p>示例:</p>
 <p><font color="#006600"> // 给float取别名为floatX</font><br><code>typedef float floatX;</code> </p>
 <p><font color="#006600"> // 给block取别名passBlock</font><br><code>typedef void(^passBlock) (int a,int b);</code></p>
@@ -407,7 +407,7 @@
 {
     NSString *name;
 }person;</code></p>
-<h4 id="2-typedef-类型定义"><a href="#2-typedef-类型定义" class="headerlink" title="2. typedef 类型定义"></a>2. <code>typedef</code> 类型定义</h4><p>作用: 类型替换: 就是把复杂类型改一个简单的名字.</p>
+<h4 id="2-define-宏定义"><a href="#2-define-宏定义" class="headerlink" title="2. define 宏定义"></a>2. <code>define</code> 宏定义</h4><p>作用: 文本替换: 把出现的文本替换为定义的文本.</p>
 <p>示例:</p>
 <p><font color="#006600"> // kSayHello 替换后面的文本</font><br><code>#define kSayHello @&quot;Hello World !&quot;</code></p>
 <p><font color="#006600"> // kSayHelloTwo 替换 kSayHello</font><br><code>#define kSayHelloTwo kSayHello</code></p>
@@ -666,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-define-宏定义"><span class="nav-number">1.</span> <span class="nav-text">1. define 宏定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-typedef-类型定义"><span class="nav-number">2.</span> <span class="nav-text">2. typedef 类型定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-define和typedef的使用注意事项"><span class="nav-number">3.</span> <span class="nav-text">3. define和typedef的使用注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-typedef-类型定义"><span class="nav-number">1.</span> <span class="nav-text">1. typedef 类型定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-define-宏定义"><span class="nav-number">2.</span> <span class="nav-text">2. define 宏定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-define和typedef的使用注意事项"><span class="nav-number">3.</span> <span class="nav-text">3. define和typedef的使用注意事项</span></a></li></ol></div>
             
 
           </div>
