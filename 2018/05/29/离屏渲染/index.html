@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS开发,离屏渲染," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="简介参加过多个产品的设计,交互,技术定型,开发,发布等完成的开发流程.具有快速学习的能力和沟通能力，能够快速融入团队,喜欢钻研新技术，更把新技术完美运用到项目中为乐趣,对工作和生活有很强的责任心,认真对待做的每一件事情. 联系方式 邮箱: zjm100163@163.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="简介">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="离屏渲染往往会带来界面卡顿的问题，这里将会讨论 当前屏幕渲染、离屏渲染 以及 CPU 渲染.">
+<meta name="keywords" content="iOS开发,离屏渲染">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离屏渲染">
+<meta property="og:url" content="http://yoursite.com/2018/05/29/离屏渲染/index.html">
 <meta property="og:site_name" content="张君明@博客">
-<meta property="og:description" content="简介参加过多个产品的设计,交互,技术定型,开发,发布等完成的开发流程.具有快速学习的能力和沟通能力，能够快速融入团队,喜欢钻研新技术，更把新技术完美运用到项目中为乐趣,对工作和生活有很强的责任心,认真对待做的每一件事情. 联系方式 邮箱: zjm100163@163.com">
+<meta property="og:description" content="离屏渲染往往会带来界面卡顿的问题，这里将会讨论 当前屏幕渲染、离屏渲染 以及 CPU 渲染.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-06T11:14:09.774Z">
+<meta property="og:updated_time" content="2019-07-04T09:01:59.226Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简介">
-<meta name="twitter:description" content="简介参加过多个产品的设计,交互,技术定型,开发,发布等完成的开发流程.具有快速学习的能力和沟通能力，能够快速融入团队,喜欢钻研新技术，更把新技术完美运用到项目中为乐趣,对工作和生活有很强的责任心,认真对待做的每一件事情. 联系方式 邮箱: zjm100163@163.com">
+<meta name="twitter:title" content="离屏渲染">
+<meta name="twitter:description" content="离屏渲染往往会带来界面卡顿的问题，这里将会讨论 当前屏幕渲染、离屏渲染 以及 CPU 渲染.">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/29/离屏渲染/"/>
 
 
 
 
 
-  <title>简介 | 张君明@博客</title>
+  <title>离屏渲染 | 张君明@博客</title>
   
 
 
@@ -284,35 +285,285 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/离屏渲染/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jarvis">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张君明@博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">简介</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>参加过多个产品的设计,交互,技术定型,开发,发布等完成的开发流程.具有快速学习的能力和沟通能力，能够快速融入团队,喜欢钻研新技术，更把新技术完美运用到项目中为乐趣,对工作和生活有很强的责任心,认真对待做的每一件事情.</p>
-<h4 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h4><p> 邮箱: zjm100163@163.com</p>
-
+          <h1 class="post-title" itemprop="name headline">离屏渲染</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T16:23:38+08:00">
+                2018-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/技术细节/" itemprop="url" rel="index">
+                    <span itemprop="name">技术细节</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>离屏渲染往往会带来界面卡顿的问题，这里将会讨论 当前屏幕渲染、离屏渲染 以及 CPU 渲染.</p>
+<a id="more"></a>
+<p>在 OpenGL 中，GPU 屏幕渲染有以下两种方式：</p>
+<ul>
+<li>On-Screen Rendering</li>
+</ul>
+<p>即当前屏幕渲染，在用于显示的屏幕缓冲区中进行，不需要额外创建新的缓存，也不需要开启新的上下文，所以性能较好，但是受到缓存大小限制等因素，一些复杂的操作无法完成。</p>
+<ul>
+<li>Off-Screen Rendering</li>
+</ul>
+<p>即离屏渲染，指的是在 GPU 的当前屏幕缓冲区外开辟新的缓冲区进行操作。</p>
+<p>相比于当前屏幕渲染，离屏渲染的代价是很高的，主要体现在如下两个方面：</p>
+<ul>
+<li><p>创建新的缓冲区</p>
+</li>
+<li><p>上下文切换。离屏渲染的整个过程，需要多次切换上下文环境：先从当前屏幕切换到离屏，等待离屏渲染结束后，将离屏缓冲区的渲染结果显示到到屏幕上，这又需要将上下文环境从离屏切换到当前屏幕。<br>当设置了以下属性时，会触发离屏渲染：</p>
+</li>
+</ul>
+<ol>
+<li>shouldRasterize（光栅化）</li>
+<li>masks（遮罩）</li>
+<li>shadows（阴影）</li>
+<li>edge antialiasing（抗锯齿）</li>
+<li>group opacity（不透明）</li>
+</ol>
+<p>为了避免卡顿问题，应当尽可能使用当前屏幕渲染，可以不使用离屏渲染则尽量不用，应当尽量避免使用 layer 的 border、corner、shadow、mask 等技术。必须离屏渲染时，相对简单的视图应该使用 CPU 渲染，相对复杂的视图则使用一般的离屏渲染。</p>
+<p>如下是 CPU 渲染和离屏渲染的区别：</p>
+<p>由于GPU的浮点运算能力比CPU强，CPU渲染的效率可能不如离屏渲染。但如果仅仅是实现一个简单的效果，直接使用 CPU 渲染的效率又可能比离屏渲染好，毕竟普通的离屏渲染要涉及到缓冲区创建和上下文切换等耗时操作。对一些简单的绘制过程来说，这个过程有可能用CoreGraphics，全部用CPU来完成反而会比GPU做得更好。一个常见的 CPU 渲染的例子是：重写 drawRect 方法，并且使用任何 Core Graphics 的技术进行了绘制操作，就涉及到了 CPU 渲染。整个渲染过程由 CPU 在 App 内同步地完成，渲染得到的bitmap最后再交由GPU用于显示。总之，具体使用 CPU 渲染还是使用 GPU 离屏渲染更多的时候需要进行性能上的具体比较才可以。</p>
+<p>一个常见的性能优化的例子就是如何给 UIView/UIImageView 加圆角。</p>
+<p>如下是三种加圆角的方式：</p>
+<ol>
+<li>设置 cornerRadius</li>
+<li>UIBezierPath</li>
+<li>Core Graphics(为 UIView 加圆角)与直接截取图片(为 UIImageView 加圆角)</li>
+</ol>
+<p>如下是这三种方法的比较：</p>
+<h5 id="cornerRadius"><a href="#cornerRadius" class="headerlink" title="cornerRadius"></a>cornerRadius</h5><pre><code>view.layer.cornerRadius = 6.0;
+view.layer.masksToBounds = YES;
+</code></pre><p>这种方式会触发两次离屏渲染，如果在滚动页面中这么做的话就会遇到性能问题。当然我们可以进行缓存以优化性能，如下：</p>
+<pre><code>view.layer.shouldRasterize = YES;
+view.layer.rasterizationScale = [UIScreen mainScreen].scale;
+</code></pre><p><code>shouldRasterize = YES</code> 会使视图渲染内容被缓存起来，下次绘制的时候可以直接显示缓存，当然要在视图内容不改变的情况下。</p>
+<p>注意：png 图片 在 UIImageView 这样处理圆角是不会产生离屏渲染的。（ios9.0之后不会离屏渲染，ios9.0之前还是会离屏渲染）。</p>
+<h5 id="UIBezierPath"><a href="#UIBezierPath" class="headerlink" title="UIBezierPath"></a>UIBezierPath</h5><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (void)drawRect:(CGRect)rect &#123;</span><br><span class="line">  CGRect <span class="keyword">bounds </span>= <span class="keyword">self.bounds;</span></span><br><span class="line"><span class="keyword"> </span> [[UIBezierPath <span class="keyword">bezierPathWithRoundedRect:rect </span>cornerRadius:<span class="number">8</span>.<span class="number">0</span>] <span class="keyword">addClip];</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword"> </span> [<span class="keyword">self.image </span>drawInRect:<span class="keyword">bounds];</span></span><br><span class="line"><span class="keyword">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>这种方法会触发一次离屏渲染，很多资料推崇这种写法，但是这种方式会导致内存暴增，并且同样会触发离屏渲染。</p>
+<p>Core Graphics(为 UIView 加圆角)与直接截取图片(为 UIImageView 加圆角)<br>正如你所期待的那样，这种方法应该是极具效率的正确的姿势。这里将为 UIView 添加圆角与为 UIImageView 添加圆角进行区分。</p>
+<p>使用 Core Graphics 为 UIView 加圆角<br>这种做法的原理是利用 Core Graphics 自己画出了一个圆角矩形。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">func kt_drawRectWithRoundedCorner(radius radius: <span class="built_in">CGFloat</span>,  </span><br><span class="line">                                  borderWidth: <span class="built_in">CGFloat</span>,</span><br><span class="line">                                  backgroundColor: <span class="built_in">UIColor</span>,</span><br><span class="line">                                  borderColor: <span class="built_in">UIColor</span>) -&gt; <span class="built_in">UIImage</span> &#123;    </span><br><span class="line">    <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(sizeToFit, <span class="literal">false</span>, <span class="built_in">UIScreen</span>.mainScreen().scale)</span><br><span class="line">    let context = <span class="built_in">UIGraphicsGetCurrentContext</span>()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">CGContextMoveToPoint</span>(context, 开始位置);  <span class="comment">// 开始坐标右边开始</span></span><br><span class="line">    <span class="built_in">CGContextAddArcToPoint</span>(context, x1, y1, x2, y2, radius);  <span class="comment">// 这种类型的代码重复四次</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">CGContextDrawPath</span>(<span class="built_in">UIGraphicsGetCurrentContext</span>(), .FillStroke)</span><br><span class="line">    let output = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line">    <span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line">    <span class="keyword">return</span> output</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个方法返回的是 UIImage，有了这个图片后，就可以创建一个 UIImageView 并插入到视图层级的底部：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIView</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">kt_addCorner</span><span class="params">(radius radius: CGFloat,</span></span></span><br><span class="line"><span class="function"><span class="params">                      borderWidth: CGFloat,</span></span></span><br><span class="line"><span class="function"><span class="params">                      backgroundColor: UIColor,</span></span></span><br><span class="line"><span class="function"><span class="params">                      borderColor: UIColor)</span></span> &#123;</span><br><span class="line">        <span class="keyword">let</span> imageView = <span class="type">UIImageView</span>(image: kt_drawRectWithRoundedCorner(radius: radius,</span><br><span class="line">                                    borderWidth: borderWidth,</span><br><span class="line">                                    backgroundColor: backgroundColor,</span><br><span class="line">                                    borderColor: borderColor))</span><br><span class="line">        <span class="keyword">self</span>.insertSubview(imageView, atIndex: <span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在调用时 只需要像这样写：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">view</span> = UIView(frame: CGRectMake(<span class="number">0</span>,<span class="number">0</span>,<span class="number">10</span>,<span class="number">10</span>))  </span><br><span class="line"><span class="built_in">view</span>.kt_addCorner(<span class="built_in">radius</span>: <span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+<p>直接截取图片为 UIImageView 加圆角<br>这里的实现思路是直接截取图片：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">extension <span class="built_in">UIImage</span> &#123;  </span><br><span class="line">    func kt_drawRectWithRoundedCorner(radius radius: <span class="built_in">CGFloat</span>, _ sizetoFit: <span class="built_in">CGSize</span>) -&gt; <span class="built_in">UIImage</span> &#123;</span><br><span class="line">        let rect = <span class="built_in">CGRect</span>(origin: <span class="built_in">CGPoint</span>(x: <span class="number">0</span>, y: <span class="number">0</span>), size: sizetoFit)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(rect.size, <span class="literal">false</span>, <span class="built_in">UIScreen</span>.mainScreen().scale)</span><br><span class="line">        <span class="built_in">CGContextAddPath</span>(<span class="built_in">UIGraphicsGetCurrentContext</span>(),</span><br><span class="line">            <span class="built_in">UIBezierPath</span>(roundedRect: rect, byRoundingCorners: <span class="built_in">UIRectCorner</span>.AllCorners,</span><br><span class="line">                cornerRadii: <span class="built_in">CGSize</span>(width: radius, height: radius)).CGPath)</span><br><span class="line">        <span class="built_in">CGContextClip</span>(<span class="built_in">UIGraphicsGetCurrentContext</span>())</span><br><span class="line"></span><br><span class="line">        <span class="keyword">self</span>.drawInRect(rect)</span><br><span class="line">        <span class="built_in">CGContextDrawPath</span>(<span class="built_in">UIGraphicsGetCurrentContext</span>(), .FillStroke)</span><br><span class="line">        let output = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line">        <span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> output</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>圆角路径直接用贝塞尔曲线绘制。这个函数的效果是将原来的 UIImage 剪裁出圆角。配合着这函数，我们可以为 UIImageView 拓展一个设置圆角的方法：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIImageView</span> </span>&#123;  </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     / !!!只有当 imageView 不为nil 时，调用此方法才有效果</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">     :param: radius 圆角半径</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">kt_addCorner</span><span class="params">(radius radius: CGFloat)</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.image = <span class="keyword">self</span>.image?.kt_drawRectWithRoundedCorner(radius: radius, <span class="keyword">self</span>.bounds.size)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在调用时只需要像如下这样写：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> imageView = <span class="built_in">let</span> imgView1 = UIImageView(<span class="built_in">image</span>: UIImage(name: <span class="string">""</span>))  </span><br><span class="line">imageView.kt_addCorner(<span class="built_in">radius</span>: <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p>注意：需要小心使用背景颜色。因为没有设置 masksToBounds，因此超出圆角的部分依然会被显示。因此不应该再使用背景颜色，可以在绘制圆角矩形时设置填充颜色来达到类似效果。</p>
+<p>总结</p>
+<ul>
+<li>如果能够只用 cornerRadius 解决问题，就不用优化。</li>
+<li>如果必须设置 masksToBounds，可以参考圆角视图的数量，如果数量较少（一页只有几个）也可以考虑不用优化。</li>
+<li>UIImageView 的圆角通过直接截取图片实现，其它视图的圆角可以通过 Core Graphics 画出圆角矩形实现。</li>
+</ul>
+
       
     </div>
+
+
+
+<div>
+      
+          <div>  <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-smile-o"></i>感谢您的阅读-------------</div>  </div>
+
+
+      
+</div>
+
+
+
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Jarvis 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Jarvis 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS开发/" rel="tag"> iOS开发</a>
+          
+            <a href="/tags/离屏渲染/" rel="tag"> 离屏渲染</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/25/AutoLayout的原理性能/" rel="next" title="AutoLayout 的原理性能">
+                <i class="fa fa-chevron-left"></i> AutoLayout 的原理性能
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -321,6 +572,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzg1MS8xNDM4MQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -441,7 +701,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#联系方式"><span class="nav-number">2.</span> <span class="nav-text">联系方式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#cornerRadius"><span class="nav-number">1.</span> <span class="nav-text">cornerRadius</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#UIBezierPath"><span class="nav-number">2.</span> <span class="nav-text">UIBezierPath</span></a></li></ol></div>
             
 
           </div>
@@ -643,6 +903,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
