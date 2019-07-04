@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="张君明@博客">
 <meta property="og:description" content="离屏渲染往往会带来界面卡顿的问题，这里将会讨论 当前屏幕渲染、离屏渲染 以及 CPU 渲染.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-04T09:01:59.226Z">
+<meta property="og:updated_time" content="2019-07-04T11:04:10.528Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="离屏渲染">
 <meta name="twitter:description" content="离屏渲染往往会带来界面卡顿的问题，这里将会讨论 当前屏幕渲染、离屏渲染 以及 CPU 渲染.">
@@ -400,21 +400,14 @@
         <p>离屏渲染往往会带来界面卡顿的问题，这里将会讨论 当前屏幕渲染、离屏渲染 以及 CPU 渲染.</p>
 <a id="more"></a>
 <p>在 OpenGL 中，GPU 屏幕渲染有以下两种方式：</p>
-<ul>
-<li>On-Screen Rendering</li>
-</ul>
+<p><strong>∙ On-Screen Rendering</strong></p>
 <p>即当前屏幕渲染，在用于显示的屏幕缓冲区中进行，不需要额外创建新的缓存，也不需要开启新的上下文，所以性能较好，但是受到缓存大小限制等因素，一些复杂的操作无法完成。</p>
-<ul>
-<li>Off-Screen Rendering</li>
-</ul>
+<p><strong>∙ Off-Screen Rendering</strong></p>
 <p>即离屏渲染，指的是在 GPU 的当前屏幕缓冲区外开辟新的缓冲区进行操作。</p>
 <p>相比于当前屏幕渲染，离屏渲染的代价是很高的，主要体现在如下两个方面：</p>
-<ul>
-<li><p>创建新的缓冲区</p>
-</li>
-<li><p>上下文切换。离屏渲染的整个过程，需要多次切换上下文环境：先从当前屏幕切换到离屏，等待离屏渲染结束后，将离屏缓冲区的渲染结果显示到到屏幕上，这又需要将上下文环境从离屏切换到当前屏幕。<br>当设置了以下属性时，会触发离屏渲染：</p>
-</li>
-</ul>
+<p><strong>∙ 创建新的缓冲区</strong></p>
+<p><strong>∙ 上下文切换。离屏渲染的整个过程，需要多次切换上下文环境：先从当前屏幕切换到离屏，等待离屏渲染结束后，将离屏缓冲区的渲染结果显示到到屏幕上，这又需要将上下文环境从离屏切换到当前屏幕。</strong></p>
+<p>当设置了以下属性时，会触发离屏渲染：</p>
 <ol>
 <li>shouldRasterize（光栅化）</li>
 <li>masks（遮罩）</li>
@@ -457,11 +450,7 @@ view.layer.rasterizationScale = [UIScreen mainScreen].scale;
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> imageView = <span class="built_in">let</span> imgView1 = UIImageView(<span class="built_in">image</span>: UIImage(name: <span class="string">""</span>))  </span><br><span class="line">imageView.kt_addCorner(<span class="built_in">radius</span>: <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 <p>注意：需要小心使用背景颜色。因为没有设置 masksToBounds，因此超出圆角的部分依然会被显示。因此不应该再使用背景颜色，可以在绘制圆角矩形时设置填充颜色来达到类似效果。</p>
 <p>总结</p>
-<ul>
-<li>如果能够只用 cornerRadius 解决问题，就不用优化。</li>
-<li>如果必须设置 masksToBounds，可以参考圆角视图的数量，如果数量较少（一页只有几个）也可以考虑不用优化。</li>
-<li>UIImageView 的圆角通过直接截取图片实现，其它视图的圆角可以通过 Core Graphics 画出圆角矩形实现。</li>
-</ul>
+<p>∙ 如果能够只用 cornerRadius 解决问题，就不用优化。<br>∙ 如果必须设置 masksToBounds，可以参考圆角视图的数量，如果数量较少（一页只有几个）也可以考虑不用优化。<br>∙ UIImageView 的圆角通过直接截取图片实现，其它视图的圆角可以通过 Core Graphics 画出圆角矩形实现。</p>
 
       
     </div>
