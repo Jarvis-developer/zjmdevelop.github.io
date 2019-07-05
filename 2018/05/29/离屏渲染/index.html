@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="张君明@博客">
 <meta property="og:description" content="离屏渲染往往会带来界面卡顿的问题，这里将会讨论 当前屏幕渲染、离屏渲染 以及 CPU 渲染.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-04T11:10:05.319Z">
+<meta property="og:updated_time" content="2019-07-04T12:13:48.256Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="离屏渲染">
 <meta name="twitter:description" content="离屏渲染往往会带来界面卡顿的问题，这里将会讨论 当前屏幕渲染、离屏渲染 以及 CPU 渲染.">
@@ -402,8 +402,8 @@
 <p>在 OpenGL 中，GPU 屏幕渲染有以下两种方式：</p>
 <p><strong>∙ On-Screen Rendering</strong><br>即当前屏幕渲染，在用于显示的屏幕缓冲区中进行，不需要额外创建新的缓存，也不需要开启新的上下文，所以性能较好，但是受到缓存大小限制等因素，一些复杂的操作无法完成。</p>
 <p><strong>∙ Off-Screen Rendering</strong><br>即离屏渲染，指的是在 GPU 的当前屏幕缓冲区外开辟新的缓冲区进行操作。</p>
-<p>相比于当前屏幕渲染，离屏渲染的代价是很高的，主要体现在如下两个方面：</p>
-<p><strong>∙ 创建新的缓冲区</strong><br><strong>∙ 上下文切换。离屏渲染的整个过程，需要多次切换上下文环境：先从当前屏幕切换到离屏，等待离屏渲染结束后，将离屏缓冲区的渲染结果显示到到屏幕上，这又需要将上下文环境从离屏切换到当前屏幕。</strong></p>
+<p>相比于当前屏幕渲染，离屏渲染的代价是很高的，主要体现在如下两个方面：<br><strong>∙ 创建新的缓冲区</strong></p>
+<p><strong>∙ 上下文切换。离屏渲染的整个过程，需要多次切换上下文环境：先从当前屏幕切换到离屏，等待离屏渲染结束后，将离屏缓冲区的渲染结果显示到到屏幕上，这又需要将上下文环境从离屏切换到当前屏幕。</strong></p>
 <p>当设置了以下属性时，会触发离屏渲染：</p>
 <ol>
 <li>shouldRasterize（光栅化）</li>
@@ -425,8 +425,10 @@
 <p>如下是这三种方法的比较：</p>
 <h5 id="1-cornerRadius"><a href="#1-cornerRadius" class="headerlink" title="1. cornerRadius"></a>1. cornerRadius</h5><pre><code>view.layer.cornerRadius = 6.0;
 view.layer.masksToBounds = YES;
-</code></pre><p>这种方式会触发两次离屏渲染，如果在滚动页面中这么做的话就会遇到性能问题。当然我们可以进行缓存以优化性能，如下：<br>    view.layer.shouldRasterize = YES;<br>    view.layer.rasterizationScale = [UIScreen mainScreen].scale;</p>
-<p><code>shouldRasterize = YES</code> 会使视图渲染内容被缓存起来，下次绘制的时候可以直接显示缓存，当然要在视图内容不改变的情况下。</p>
+</code></pre><p>这种方式会触发两次离屏渲染，如果在滚动页面中这么做的话就会遇到性能问题。当然我们可以进行缓存以优化性能，如下:</p>
+<pre><code>view.layer.shouldRasterize = YES;
+view.layer.rasterizationScale = [UIScreen mainScreen].scale;
+</code></pre><p><code>shouldRasterize = YES</code> 会使视图渲染内容被缓存起来，下次绘制的时候可以直接显示缓存，当然要在视图内容不改变的情况下。</p>
 <p>注意：png 图片 在 UIImageView 这样处理圆角是不会产生离屏渲染的。（ios9.0之后不会离屏渲染，ios9.0之前还是会离屏渲染）。</p>
 <h5 id="2-UIBezierPath"><a href="#2-UIBezierPath" class="headerlink" title="2. UIBezierPath"></a>2. UIBezierPath</h5><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (void)drawRect:(CGRect)rect &#123;</span><br><span class="line">  CGRect <span class="keyword">bounds </span>= <span class="keyword">self.bounds;</span></span><br><span class="line"><span class="keyword"> </span> [[UIBezierPath <span class="keyword">bezierPathWithRoundedRect:rect </span>cornerRadius:<span class="number">8</span>.<span class="number">0</span>] <span class="keyword">addClip];</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword"> </span> [<span class="keyword">self.image </span>drawInRect:<span class="keyword">bounds];</span></span><br><span class="line"><span class="keyword">&#125;</span></span><br></pre></td></tr></table></figure>
 <p>这种方法会触发一次离屏渲染，很多资料推崇这种写法，但是这种方式会导致内存暴增，并且同样会触发离屏渲染。</p>
