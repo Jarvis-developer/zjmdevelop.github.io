@@ -90,7 +90,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g5noqctjggj31hc0u074p.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g5nq6rff6yj30zs05kt8u.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g5nqb8ujm4j31he0n075j.jpg">
-<meta property="og:updated_time" content="2019-08-04T09:25:27.152Z">
+<meta property="og:updated_time" content="2019-08-04T09:30:43.925Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="静态分析浅谈">
 <meta name="twitter:description" content="App的业务更新越来越快,完全依赖人工保证工程质量也变得越来越不牢靠。静态分析，这种可以帮助我们在编写代码的阶段就能及时发现代码错误，从而在根儿上保证工程质量的技术，就成为了 iOS 开发者最常用到的一种代码调试技术。">
@@ -406,7 +406,7 @@
 <p>一款优秀的静态分析器，能够帮助我们更加全面的发现人工测试中的盲点，提高检查问题的效率，寻找潜在的可用性问题，比如空指针访问、资源和内存泄露等等。</p>
 <p>Xcode 自带的静态分析工具 Analyze，通过静态语法分析能够找出在代码层面就能发现的内存泄露问题，还可以通过上下文分析出是否存在变量无用等问题。 静态分析器还可以检查代码规范和代码可维护性的问题，根据一些指标就能够找出哪些代码需要优化和重构。这里有三个常用的复杂度指标，可以帮助我们度量是否需要优化和重构代码。</p>
 <ul>
-<li><p>全复杂度高. 圈复杂度指的是遍历一个模块的时间复杂度,这个复杂度是由分支语句如 if, case, while, for 还有运算符如 &amp;&amp;, || 共同决定的. 一般来说圈复杂度在 4 以下是低复杂度, 5 到 7 是中复杂度, 8 到 10 是高复杂度, 11 以上复杂度就非常高了,需要考虑重构.</p>
+<li><p>圈复杂度高. 圈复杂度指的是遍历一个模块的时间复杂度,这个复杂度是由分支语句如 if, case, while, for 还有运算符如 &amp;&amp;, || 共同决定的. 一般来说圈复杂度在 4 以下是低复杂度, 5 到 7 是中复杂度, 8 到 10 是高复杂度, 11 以上复杂度就非常高了,需要考虑重构.</p>
 </li>
 <li><p>NSPath 复杂度高. NSPath 复杂度是指一个方法所有可能的执行路径的数量. 一般高于 200 就需要考虑降低复杂度.</p>
 </li>
@@ -487,14 +487,14 @@
 </li>
 <li><p>分析想过滤掉第三方的项目</p>
 <p>  当我们在项目中使用了很多第三方的时候，其实我们只想让 Infer 分析我们的代码，而不想分析第三方的代码，不然分析报告中会有很多第三方的 issue，这时我们可以用命令行过滤掉关于不想分析的文件。比如用到 cocoapods 的项目，我们想过滤掉 Pods 引入的第三方库，命令行如下：</p>
+<blockquote>
+<p>先执行: <code>cd 项目文件夹</code></p>
+<p>后执行:<br>  <code>INFER_ARGS=&quot;--skip-clang-analysis-in-path^[\&quot;Pods\&quot;]&quot; infer -- xcodebuild -workspace ./项目名称.xcworkspace -configuration Debug -scheme 项目名称</code></p>
+</blockquote>
+<p>  in-path 后面跟的是一个忽略文件或者文件夹的路径数组。</p>
 </li>
 </ul>
-<pre><code>&gt; 先执行: `cd 项目文件夹`
-
-&gt; 后执行 `INFER_ARGS=&quot;--skip-clang-analysis-in-path^[\&quot;Pods\&quot;]&quot; infer -- xcodebuild -workspace ./项目名称.xcworkspace -configuration Debug -scheme 项目名称`
-
-in-path 后面跟的是一个忽略文件或者文件夹的路径数组。
-</code></pre><p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g5nq6rff6yj30zs05kt8u.jpg" alt="编译结果"></p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g5nq6rff6yj30zs05kt8u.jpg" alt="编译结果"></p>
 <p>命令行工具内的错误提示为:</p>
 <p><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g5nqb8ujm4j31he0n075j.jpg" alt="Infer 错误提示"></p>
 <p>在上图我们可以看到在 26 行和 29 行有两个错误已经提示出来了.我们按照其中的提示进行修改就可以了.是不是非常清晰和方便.</p>
