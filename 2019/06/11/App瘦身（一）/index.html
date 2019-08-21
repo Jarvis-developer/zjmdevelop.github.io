@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS开发,离屏渲染," />
+  <meta name="keywords" content="iOS开发,App瘦身," />
 
 
 
@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="离屏渲染往往会带来界面卡顿的问题，这里将会讨论 当前屏幕渲染、离屏渲染 以及 CPU 渲染.">
-<meta name="keywords" content="iOS开发,离屏渲染">
+<meta name="description" content="这个系列想跟大家一起讨论下App瘦身的问题,因为以前项目的更新速度很快,很多功能改变后担心下一次用得到就选择了保留,但是项目稳定之后就留下来很多无用的图片和工程,时间久了就导致安装包变大.这个知识点由于方法可能需要分步实施,我会做成一个系列来整理.">
+<meta name="keywords" content="iOS开发,App瘦身">
 <meta property="og:type" content="article">
-<meta property="og:title" content="离屏渲染">
-<meta property="og:url" content="http://yoursite.com/2018/05/29/离屏渲染/index.html">
+<meta property="og:title" content="App瘦身浅谈(一)">
+<meta property="og:url" content="http://yoursite.com/2019/06/11/App瘦身（一）/index.html">
 <meta property="og:site_name" content="张君明@博客">
-<meta property="og:description" content="离屏渲染往往会带来界面卡顿的问题，这里将会讨论 当前屏幕渲染、离屏渲染 以及 CPU 渲染.">
+<meta property="og:description" content="这个系列想跟大家一起讨论下App瘦身的问题,因为以前项目的更新速度很快,很多功能改变后担心下一次用得到就选择了保留,但是项目稳定之后就留下来很多无用的图片和工程,时间久了就导致安装包变大.这个知识点由于方法可能需要分步实施,我会做成一个系列来整理.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-04T12:13:48.256Z">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006y8mN6ly1g67ojmn7ftj314k0t8q69.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006y8mN6ly1g67pevhpxmj312a05kglu.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/006y8mN6ly1g67pvvpyiej31pk0l4dj7.jpg">
+<meta property="og:updated_time" content="2019-08-21T15:51:20.736Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="离屏渲染">
-<meta name="twitter:description" content="离屏渲染往往会带来界面卡顿的问题，这里将会讨论 当前屏幕渲染、离屏渲染 以及 CPU 渲染.">
+<meta name="twitter:title" content="App瘦身浅谈(一)">
+<meta name="twitter:description" content="这个系列想跟大家一起讨论下App瘦身的问题,因为以前项目的更新速度很快,很多功能改变后担心下一次用得到就选择了保留,但是项目稳定之后就留下来很多无用的图片和工程,时间久了就导致安装包变大.这个知识点由于方法可能需要分步实施,我会做成一个系列来整理.">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/006y8mN6ly1g67ojmn7ftj314k0t8q69.jpg">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/29/离屏渲染/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/06/11/App瘦身（一）/"/>
 
 
 
 
 
-  <title>离屏渲染 | 张君明@博客</title>
+  <title>App瘦身浅谈(一) | 张君明@博客</title>
   
 
 
@@ -297,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/离屏渲染/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/11/App瘦身（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jarvis">
@@ -314,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">离屏渲染</h1>
+          <h1 class="post-title" itemprop="name headline">App瘦身浅谈(一)</h1>
         
 
         <div class="post-meta">
@@ -326,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T16:23:38+08:00">
-                2018-05-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-11T17:16:30+08:00">
+                2019-06-11
               </time>
             
 
@@ -360,8 +364,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/技术细节/" itemprop="url" rel="index">
-                    <span itemprop="name">技术细节</span>
+                  <a href="/categories/iOS开发/App优化/" itemprop="url" rel="index">
+                    <span itemprop="name">App优化</span>
                   </a>
                 </span>
 
@@ -397,56 +401,105 @@
       
 
       
-        <p>离屏渲染往往会带来界面卡顿的问题，这里将会讨论 当前屏幕渲染、离屏渲染 以及 CPU 渲染.</p>
+        <p>这个系列想跟大家一起讨论下App瘦身的问题,因为以前项目的更新速度很快,很多功能改变后担心下一次用得到就选择了保留,但是项目稳定之后就留下来很多无用的图片和工程,时间久了就导致安装包变大.这个知识点由于方法可能需要分步实施,我会做成一个系列来整理.</p>
 <a id="more"></a>
-<p>在 OpenGL 中，GPU 屏幕渲染有以下两种方式：</p>
-<p><strong>∙ On-Screen Rendering</strong><br>即当前屏幕渲染，在用于显示的屏幕缓冲区中进行，不需要额外创建新的缓存，也不需要开启新的上下文，所以性能较好，但是受到缓存大小限制等因素，一些复杂的操作无法完成。</p>
-<p><strong>∙ Off-Screen Rendering</strong><br>即离屏渲染，指的是在 GPU 的当前屏幕缓冲区外开辟新的缓冲区进行操作。</p>
-<p>相比于当前屏幕渲染，离屏渲染的代价是很高的，主要体现在如下两个方面：<br><strong>∙ 创建新的缓冲区</strong></p>
-<p><strong>∙ 上下文切换。离屏渲染的整个过程，需要多次切换上下文环境：先从当前屏幕切换到离屏，等待离屏渲染结束后，将离屏缓冲区的渲染结果显示到到屏幕上，这又需要将上下文环境从离屏切换到当前屏幕。</strong></p>
-<p>当设置了以下属性时，会触发离屏渲染：</p>
+<p>这就导致了两个问题:</p>
+<ul>
+<li><p>安装包变大导致新用户下载消耗流量,下载时间增长,不利于用户的扩展.老用户更新率变低.</p>
+</li>
+<li><p>无用文件和图片过多,导致项目工程混乱,冗余,增加了开发时代码定位时间.</p>
+</li>
+</ul>
+<p>那么对 App 包大小做优化的目的就很明了了. 特别是 19 年 5 月份后 App Store 规定了安装包大小超过 200MB 的 App 不能使用手机网络环境下载，也就是只能在 WiFi 环境下下载。所以，200MB 就成了 App 的生死线，一旦超越了这条线就很有可能会失去大量用户。</p>
+<p>综上所述，App 包过大既损害用户体验，影响升级率，还会导致非 WiFi 环境无法下载这样可能影响到 App 生死的问题。那么，怎样对包大小进行瘦身和控制包大小的不合理增长就成了重中之重。<br>接下来，我就介绍下 App 瘦身的方法:</p>
+<h4 id="1-App-Thinning"><a href="#1-App-Thinning" class="headerlink" title="1. App Thinning"></a><a href="#1">1. App Thinning</a></h4><h4 id="2-删除无用图片"><a href="#2-删除无用图片" class="headerlink" title="2. 删除无用图片"></a><a href="#2">2. 删除无用图片</a></h4><h4 id="3-压缩图片"><a href="#3-压缩图片" class="headerlink" title="3. 压缩图片"></a><a href="#1">3. 压缩图片</a></h4><p>废话不多说, 直接开始介绍:</p>
+<h4 id="1">1. App Thinning</h4>
+
+<p>App Thinning 是由苹果公司推出的一项可以改善 App 下载进程的新技术，主要是为了解决用户下载 App 耗费过高流量的问题，同时还可以节省用户 iOS 设备的存储空间。</p>
+<p>现在的 iOS 设备屏幕尺寸、分辨率越来越多样化，这样也就需要更多资源来匹配不同的尺寸和分辨率。 同时，App 也会有 32 位、64 位不同芯片架构的优化版本。如果这些都在一个包里，那么用户下载包的大小势必就会变大。</p>
+<p>App Thinning 会专门针对不同的设备来选择只适用于当前设备的内容以供下载。比如，iPhone 6 只会下载 2x 分辨率的图片资源，iPhone 6plus 则只会下载 3x 分辨率的图片资源。</p>
+<p>在苹果公司使用 App Thinning 之前， 每个 App 包会包含多个芯片的指令集架构文件.使用 App Thinning 后，用户下载时就只会下载一个适合自己设备的芯片指令集架构文件。</p>
+<h5 id="App-Thinning-有三种方式："><a href="#App-Thinning-有三种方式：" class="headerlink" title="App Thinning 有三种方式："></a>App Thinning 有三种方式：</h5><ul>
+<li><p>App Slicing, 会在你向 iTunes Connect 上传 App 后，对App做切割, 创建不同的变体, 这样就可以适配不同的设备.</p>
+</li>
+<li><p>On-Demand Resources, 主要为游戏多关卡场景服务, 根据用户游戏关卡的进度下载随后几个关卡的资源, 并且已经通过的关卡会被删除, 这样可以减少初装 App 的包大小.</p>
+</li>
+<li><p>Bitcode, 针对特定设备进行包大小的优化.</p>
+</li>
+</ul>
+<h5 id="如何在你项目里使用-App-Thinning-呢？"><a href="#如何在你项目里使用-App-Thinning-呢？" class="headerlink" title="如何在你项目里使用 App Thinning 呢？"></a>如何在你项目里使用 App Thinning 呢？</h5><p>其实，这里的大部分工作都是由 Xcode 和 App Store 来帮你完成的，你只需要通过 Xcode 添加 xcassets 目录，然后将图片添加进来即可。</p>
+<p>首先，新建一个文件选择 Asset Catalog 模板，如下图所示：</p>
+<p><img src="http://ww4.sinaimg.cn/large/006y8mN6ly1g67ojmn7ftj314k0t8q69.jpg" alt="选择使用 Asset Catalog 模板"></p>
+<p>然后，按照 Asset Catalog 的模板添加图片资源即可，添加的 2x 分辨率的图片和 3x 分辨率的图片，会在上传到 App Store 后被创建成不同的变体以减小 App 安装包的大小。而芯片指令集架构文件只需要按照默认的设置， App Store 就会根据设备创建不同的变体，每个变体里只有当前设备需要的那个芯片指令集架构文件。<br>使用 App Thining 后，你可以将 2x 图和 3x 图区分开，从而达到减小 App 安装包体积的目的。</p>
+<p>如果我们要进一步减小 App 包体积的话，还需要在图片和代码上继续做优化。接下来，我就跟你说说，为了减小 App 安装包的体积，我们还能在图片上做些什么？</p>
+<p>图片资源的优化空间，主要体现在删除无用图片和图片资源压缩这两方面。而删除无用图片，又是其中最容易、最应该先做的。像代码瘦身这样难啃的骨头，我们就留在后面吧。那么，我们是如何找到并删除这些无用图片资源的呢？</p>
+<p>我想你肯定不愿意听到我介绍的方法就是选择图片名称在全局搜索有没有使用过这个图片这种方法吧. 显然你的想法是对的, 当然不会用这么 low 的方法, 下面介绍一种喵神写的方法, 超级好用.</p>
+<h4 id="2">2. FengNiao 删除无用图片</h4>
+
+<p>FengNiao 一个删除Xcode工程中无用图片资源的神器</p>
+<h5 id="FengNiao-是什么呢"><a href="#FengNiao-是什么呢" class="headerlink" title="FengNiao 是什么呢?"></a>FengNiao 是什么呢?</h5><p>FengNiao 一个命令行工具，由iOS界的大神 onevcat 喵神使用 swift 开发并开源，github 地址在这里：<a href="https://github.com/onevcat/FengNiao" target="_blank" rel="noopener">FengNiao</a></p>
+<h5 id="FengNiao-怎么安装呢"><a href="#FengNiao-怎么安装呢" class="headerlink" title="FengNiao 怎么安装呢?"></a>FengNiao 怎么安装呢?</h5><p>使用源码安装： 打开命令行，执行以下操作:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/onevcat/FengNiao.git</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">cd</span> FengNiao</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> ./install.sh</span></span><br></pre></td></tr></table></figure>
+<p>等待一会之后，fengniao 会自动编译安装到 <code>/usr/local/bin</code>目录下，OK，安装完毕，是不是很简单。</p>
+<h5 id="FengNiao-怎么用呢"><a href="#FengNiao-怎么用呢" class="headerlink" title="FengNiao 怎么用呢?"></a>FengNiao 怎么用呢?</h5><ol>
+<li><p><strong>第一种用法</strong></p>
 <ol>
-<li>shouldRasterize（光栅化）</li>
-<li>masks（遮罩）</li>
-<li>shadows（阴影）</li>
-<li>edge antialiasing（抗锯齿）</li>
-<li>group opacity（不透明）</li>
+<li><p><code>cd</code> 到你的项目目录</p>
+</li>
+<li><p>执行 <code>fengniao</code> 命令, 出现如下图结果:</p>
+<p><img src="http://ww3.sinaimg.cn/large/006y8mN6ly1g67pevhpxmj312a05kglu.jpg" alt=""></p>
+<p>不仅显示了没有使用的图片的总大小, 还显示了三个命令:</p>
+</li>
 </ol>
-<p>为了避免卡顿问题，应当尽可能使用当前屏幕渲染，可以不使用离屏渲染则尽量不用，应当尽量避免使用 layer 的 border、corner、shadow、mask 等技术。必须离屏渲染时，相对简单的视图应该使用 CPU 渲染，相对复杂的视图则使用一般的离屏渲染。</p>
-<p>如下是 CPU 渲染和离屏渲染的区别：</p>
-<p>由于GPU的浮点运算能力比CPU强，CPU渲染的效率可能不如离屏渲染。但如果仅仅是实现一个简单的效果，直接使用 CPU 渲染的效率又可能比离屏渲染好，毕竟普通的离屏渲染要涉及到缓冲区创建和上下文切换等耗时操作。对一些简单的绘制过程来说，这个过程有可能用CoreGraphics，全部用CPU来完成反而会比GPU做得更好。一个常见的 CPU 渲染的例子是：重写 drawRect 方法，并且使用任何 Core Graphics 的技术进行了绘制操作，就涉及到了 CPU 渲染。整个渲染过程由 CPU 在 App 内同步地完成，渲染得到的bitmap最后再交由GPU用于显示。总之，具体使用 CPU 渲染还是使用 GPU 离屏渲染更多的时候需要进行性能上的具体比较才可以。</p>
-<p>一个常见的性能优化的例子就是如何给 UIView/UIImageView 加圆角。</p>
-<p>如下是三种加圆角的方式：</p>
+<ul>
+<li><code>list</code>: 列表查看</li>
+<li><code>delete</code>: 直接删除</li>
+<li><p><code>ignore</code>: 忽略文件</p>
+<p>还可以使用 <code>fengniao -h</code> 查看所有支持的命令</p>
+</li>
+</ul>
 <ol>
-<li>设置 cornerRadius</li>
-<li>UIBezierPath</li>
-<li>Core Graphics(为 UIView 加圆角)与直接截取图片(为 UIImageView 加圆角)</li>
+<li><p>还有一种更常进行的操作，只查找当前工程中的图片，而不包括 Pod 和 Carthage 中的资源：</p>
+<p><code>fengniao --project . --exclude Carthage Pods</code> </p>
+<p>项目中常用的是这个命令行, 很实用.</p>
+</li>
 </ol>
-<p>如下是这三种方法的比较：</p>
-<h5 id="1-cornerRadius"><a href="#1-cornerRadius" class="headerlink" title="1. cornerRadius"></a>1. cornerRadius</h5><pre><code>view.layer.cornerRadius = 6.0;
-view.layer.masksToBounds = YES;
-</code></pre><p>这种方式会触发两次离屏渲染，如果在滚动页面中这么做的话就会遇到性能问题。当然我们可以进行缓存以优化性能，如下:</p>
-<pre><code>view.layer.shouldRasterize = YES;
-view.layer.rasterizationScale = [UIScreen mainScreen].scale;
-</code></pre><p><code>shouldRasterize = YES</code> 会使视图渲染内容被缓存起来，下次绘制的时候可以直接显示缓存，当然要在视图内容不改变的情况下。</p>
-<p>注意：png 图片 在 UIImageView 这样处理圆角是不会产生离屏渲染的。（ios9.0之后不会离屏渲染，ios9.0之前还是会离屏渲染）。</p>
-<h5 id="2-UIBezierPath"><a href="#2-UIBezierPath" class="headerlink" title="2. UIBezierPath"></a>2. UIBezierPath</h5><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (void)drawRect:(CGRect)rect &#123;</span><br><span class="line">  CGRect <span class="keyword">bounds </span>= <span class="keyword">self.bounds;</span></span><br><span class="line"><span class="keyword"> </span> [[UIBezierPath <span class="keyword">bezierPathWithRoundedRect:rect </span>cornerRadius:<span class="number">8</span>.<span class="number">0</span>] <span class="keyword">addClip];</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword"> </span> [<span class="keyword">self.image </span>drawInRect:<span class="keyword">bounds];</span></span><br><span class="line"><span class="keyword">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>这种方法会触发一次离屏渲染，很多资料推崇这种写法，但是这种方式会导致内存暴增，并且同样会触发离屏渲染。</p>
-<h5 id="3-Core-Graphics-为-UIView-加圆角-与直接截取图片-为-UIImageView-加圆角"><a href="#3-Core-Graphics-为-UIView-加圆角-与直接截取图片-为-UIImageView-加圆角" class="headerlink" title="3. Core Graphics(为 UIView 加圆角)与直接截取图片(为 UIImageView 加圆角)"></a>3. Core Graphics(为 UIView 加圆角)与直接截取图片(为 UIImageView 加圆角)</h5><p>正如你所期待的那样，这种方法应该是极具效率的正确的姿势。这里将为 UIView 添加圆角与为 UIImageView 添加圆角进行区分。使用 Core Graphics 为 UIView 加圆角<br>这种做法的原理是利用 Core Graphics 自己画出了一个圆角矩形。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">func kt_drawRectWithRoundedCorner(radius radius: <span class="built_in">CGFloat</span>,  </span><br><span class="line">                                  borderWidth: <span class="built_in">CGFloat</span>,</span><br><span class="line">                                  backgroundColor: <span class="built_in">UIColor</span>,</span><br><span class="line">                                  borderColor: <span class="built_in">UIColor</span>) -&gt; <span class="built_in">UIImage</span> &#123;    </span><br><span class="line">    <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(sizeToFit, <span class="literal">false</span>, <span class="built_in">UIScreen</span>.mainScreen().scale)</span><br><span class="line">    let context = <span class="built_in">UIGraphicsGetCurrentContext</span>()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">CGContextMoveToPoint</span>(context, 开始位置);  <span class="comment">// 开始坐标右边开始</span></span><br><span class="line">    <span class="built_in">CGContextAddArcToPoint</span>(context, x1, y1, x2, y2, radius);  <span class="comment">// 这种类型的代码重复四次</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">CGContextDrawPath</span>(<span class="built_in">UIGraphicsGetCurrentContext</span>(), .FillStroke)</span><br><span class="line">    let output = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line">    <span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line">    <span class="keyword">return</span> output</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个方法返回的是 UIImage，有了这个图片后，就可以创建一个 UIImageView 并插入到视图层级的底部：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIView</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">kt_addCorner</span><span class="params">(radius radius: CGFloat,</span></span></span><br><span class="line"><span class="function"><span class="params">                      borderWidth: CGFloat,</span></span></span><br><span class="line"><span class="function"><span class="params">                      backgroundColor: UIColor,</span></span></span><br><span class="line"><span class="function"><span class="params">                      borderColor: UIColor)</span></span> &#123;</span><br><span class="line">        <span class="keyword">let</span> imageView = <span class="type">UIImageView</span>(image: kt_drawRectWithRoundedCorner(radius: radius,</span><br><span class="line">                                    borderWidth: borderWidth,</span><br><span class="line">                                    backgroundColor: backgroundColor,</span><br><span class="line">                                    borderColor: borderColor))</span><br><span class="line">        <span class="keyword">self</span>.insertSubview(imageView, atIndex: <span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在调用时 只需要像这样写：</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">view</span> = UIView(frame: CGRectMake(<span class="number">0</span>,<span class="number">0</span>,<span class="number">10</span>,<span class="number">10</span>))  </span><br><span class="line"><span class="built_in">view</span>.kt_addCorner(<span class="built_in">radius</span>: <span class="number">6</span>)</span><br></pre></td></tr></table></figure>
-<p>直接截取图片为 UIImageView 加圆角<br>这里的实现思路是直接截取图片：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">extension <span class="built_in">UIImage</span> &#123;  </span><br><span class="line">    func kt_drawRectWithRoundedCorner(radius radius: <span class="built_in">CGFloat</span>, _ sizetoFit: <span class="built_in">CGSize</span>) -&gt; <span class="built_in">UIImage</span> &#123;</span><br><span class="line">        let rect = <span class="built_in">CGRect</span>(origin: <span class="built_in">CGPoint</span>(x: <span class="number">0</span>, y: <span class="number">0</span>), size: sizetoFit)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(rect.size, <span class="literal">false</span>, <span class="built_in">UIScreen</span>.mainScreen().scale)</span><br><span class="line">        <span class="built_in">CGContextAddPath</span>(<span class="built_in">UIGraphicsGetCurrentContext</span>(),</span><br><span class="line">            <span class="built_in">UIBezierPath</span>(roundedRect: rect, byRoundingCorners: <span class="built_in">UIRectCorner</span>.AllCorners,</span><br><span class="line">                cornerRadii: <span class="built_in">CGSize</span>(width: radius, height: radius)).CGPath)</span><br><span class="line">        <span class="built_in">CGContextClip</span>(<span class="built_in">UIGraphicsGetCurrentContext</span>())</span><br><span class="line"></span><br><span class="line">        <span class="keyword">self</span>.drawInRect(rect)</span><br><span class="line">        <span class="built_in">CGContextDrawPath</span>(<span class="built_in">UIGraphicsGetCurrentContext</span>(), .FillStroke)</span><br><span class="line">        let output = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line">        <span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> output</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>圆角路径直接用贝塞尔曲线绘制。这个函数的效果是将原来的 UIImage 剪裁出圆角。配合着这函数，我们可以为 UIImageView 拓展一个设置圆角的方法：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIImageView</span> </span>&#123;  </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     / !!!只有当 imageView 不为nil 时，调用此方法才有效果</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">     :param: radius 圆角半径</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">kt_addCorner</span><span class="params">(radius radius: CGFloat)</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.image = <span class="keyword">self</span>.image?.kt_drawRectWithRoundedCorner(radius: radius, <span class="keyword">self</span>.bounds.size)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在调用时只需要像如下这样写：</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> imageView = <span class="built_in">let</span> imgView1 = UIImageView(<span class="built_in">image</span>: UIImage(name: <span class="string">""</span>))  </span><br><span class="line">imageView.kt_addCorner(<span class="built_in">radius</span>: <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-<p>注意：需要小心使用背景颜色。因为没有设置 masksToBounds，因此超出圆角的部分依然会被显示。因此不应该再使用背景颜色，可以在绘制圆角矩形时设置填充颜色来达到类似效果。</p>
-<p>总结</p>
-<p>∙ 如果能够只用 cornerRadius 解决问题，就不用优化。<br>∙ 如果必须设置 masksToBounds，可以参考圆角视图的数量，如果数量较少（一页只有几个）也可以考虑不用优化。<br>∙ UIImageView 的圆角通过直接截取图片实现，其它视图的圆角可以通过 Core Graphics 画出圆角矩形实现。</p>
+</li>
+</ol>
+<ol>
+<li><p><strong>第二种用法</strong></p>
+<p> 加入到Xcode的编译过程 如果你想在每次编译的时候都检查一下是否有无用图片资源，并删除它们的话，当然不会让你失望. 按照我说的步骤操作:</p>
+<ol>
+<li>选中项目中的 TARGETS</li>
+<li>选择 Build Phases</li>
+<li>点击 + </li>
+<li>选择 New Run Script Phase </li>
+<li><p>脚本中添加如下内容:<br><code>fengniao --exclude Carthage Pods --force</code></p>
+<p>哎呀,真麻烦,直接上图:</p>
+<p><img src="http://ww2.sinaimg.cn/large/006y8mN6ly1g67pvvpyiej31pk0l4dj7.jpg" alt=""></p>
+<blockquote>
+<p>注意：这个 Run Script 需要添加在 Copy Bundle Resources 的前面，不然项目中的图片已</p>
+<p>经被编译进项目，不能再删除了。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+<h5 id="FengNiao-原理是什么呢"><a href="#FengNiao-原理是什么呢" class="headerlink" title="FengNiao 原理是什么呢?"></a>FengNiao 原理是什么呢?</h5><p>其实fengniao的原理还是比较简单的</p>
+<ol>
+<li><p>在项目中的<code>imageset</code>, <code>launchimage</code>, <code>appiconset</code>, <code>bundle</code> 这些文件夹下，查找<code>imageset</code>, <code>jpg</code>, <code>png</code>, <code>gif</code>, <code>pdf</code> 这些类型的文件。</p>
+</li>
+<li><p>在项目中后缀为 <code>m</code>, <code>mm</code>, <code>swift</code>, <code>xib</code>, <code>storyboard</code>, <code>plist</code> 这些的文件中，查找第一步查找到的文件名，字符串匹配.</p>
+</li>
+<li><p>得到所有未使用的资源文件名</p>
+</li>
+</ol>
+<h4 id="3">3. 压缩图片</h4>
+
+<p>对于 App 来说，图片资源总会在安装包里占个大头儿。对它们最好的处理就是在不损害图片质量的前提下尽量的压缩. 目前最好的压缩方案是将图片转成 WebP.你可以选择由腾讯公司开发的 iSparta。iSpart 是一个 GUI 工具，操作方便快捷，可以实现 PNG 格式转 WebP，同时提供批量处理和记录操作配置的功能。如果是其他格式的图片要转成 WebP 格式的话，需要先将其转成 PNG 格式，再转成 WebP 格式。</p>
+<p>图片压缩完了并不是结束，我们还需要在显示图片时使用 libwebp 进行解析。不过，WebP 在 CPU 消耗和解码时间上会比 PNG 高两倍。所以，我们有时候还需要在性能和体积上做取舍。</p>
+<p>我的建议是，如果图片大小超过了 100KB，你可以考虑使用 WebP；而小于 100KB 时，你可以使用网页工具 TinyPng 进行图片压缩。这两个工具的压缩率没有 WebP 那么高，不会改变图片压缩方式，所以解析时对性能损耗也不会增加。</p>
+<p>本章介绍到此结束….</p>
 
       
     </div>
@@ -508,7 +561,7 @@ view.layer.rasterizationScale = [UIScreen mainScreen].scale;
           
             <a href="/tags/iOS开发/" rel="tag"> iOS开发</a>
           
-            <a href="/tags/离屏渲染/" rel="tag"> 离屏渲染</a>
+            <a href="/tags/App瘦身/" rel="tag"> App瘦身</a>
           
         </div>
       
@@ -521,8 +574,8 @@ view.layer.rasterizationScale = [UIScreen mainScreen].scale;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/25/AutoLayout的原理性能/" rel="next" title="AutoLayout 的原理性能">
-                <i class="fa fa-chevron-left"></i> AutoLayout 的原理性能
+              <a href="/2018/09/06/静态分析/" rel="next" title="静态分析浅谈">
+                <i class="fa fa-chevron-left"></i> 静态分析浅谈
               </a>
             
           </div>
@@ -530,10 +583,6 @@ view.layer.rasterizationScale = [UIScreen mainScreen].scale;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/18/唯一标识符汇总/" rel="prev" title="设备唯一标识符汇总">
-                设备唯一标识符汇总 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -690,7 +739,7 @@ view.layer.rasterizationScale = [UIScreen mainScreen].scale;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-cornerRadius"><span class="nav-number">1.</span> <span class="nav-text">1. cornerRadius</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-UIBezierPath"><span class="nav-number">2.</span> <span class="nav-text">2. UIBezierPath</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-Core-Graphics-为-UIView-加圆角-与直接截取图片-为-UIImageView-加圆角"><span class="nav-number">3.</span> <span class="nav-text">3. Core Graphics(为 UIView 加圆角)与直接截取图片(为 UIImageView 加圆角)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-App-Thinning"><span class="nav-number">1.</span> <span class="nav-text">1. App Thinning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-删除无用图片"><span class="nav-number">2.</span> <span class="nav-text">2. 删除无用图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-压缩图片"><span class="nav-number">3.</span> <span class="nav-text">3. 压缩图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1"><span class="nav-number">4.</span> <span class="nav-text">1. App Thinning</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#App-Thinning-有三种方式："><span class="nav-number">4.1.</span> <span class="nav-text">App Thinning 有三种方式：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何在你项目里使用-App-Thinning-呢？"><span class="nav-number">4.2.</span> <span class="nav-text">如何在你项目里使用 App Thinning 呢？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2"><span class="nav-number">5.</span> <span class="nav-text">2. FengNiao 删除无用图片</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#FengNiao-是什么呢"><span class="nav-number">5.1.</span> <span class="nav-text">FengNiao 是什么呢?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#FengNiao-怎么安装呢"><span class="nav-number">5.2.</span> <span class="nav-text">FengNiao 怎么安装呢?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#FengNiao-怎么用呢"><span class="nav-number">5.3.</span> <span class="nav-text">FengNiao 怎么用呢?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#FengNiao-原理是什么呢"><span class="nav-number">5.4.</span> <span class="nav-text">FengNiao 原理是什么呢?</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3"><span class="nav-number">6.</span> <span class="nav-text">3. 压缩图片</span></a></li></ol></div>
             
 
           </div>
